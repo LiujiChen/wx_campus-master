@@ -1,0 +1,56 @@
+<view class="page-body">
+  <view class="nav">
+    <image src="../../icons/commodity.png" />二手商品交易
+  </view>
+  <!-- <van-toast id="van-toast" /> -->
+  <!-- 下拉选框 -->
+  <view class="select">
+    <view class="box" bindtap="showType" style="border-right: 2rpx rgba(0, 0, 0, 0.1) solid;">
+      {{currtype}}
+      <van-icon name="arrow-down" custom-class="image" />
+    </view>
+    <view class="box" bindtap="showzone">
+      {{currzone}}
+      <van-icon name="arrow-down" custom-class="image" />
+    </view>
+  </view>
+
+  <van-action-sheet
+    show="{{ type_show }}"
+    actions="{{ type_list }}"
+    bind:select="selectType"
+    bind:close="type_onClose"
+    cancel-text="取消"
+    bind:cancel="type_onClose"
+  />
+
+  <van-action-sheet
+    show="{{ zone_show }}"
+    actions="{{zone_list }}"
+    bind:select="selectZone"
+    bind:close="zone_onClose"
+    cancel-text="取消"
+    bind:cancel="zone_onClose"
+  />
+
+  <!-- 单个 -->
+  <!-- <van-card num="2" price="2.00" desc="ONLY夏季新款简约通勤版型单排纽扣衣襟西服女" title="ONLY"
+    thumb="https://ftp.bmp.ovh/imgs/2021/05/294e6cf1d3a0f5f8.jpg" custom-class="card" bindtap="onDetail">
+  </van-card>-->
+
+  <!-- 所有的 -->
+  <van-empty wx:if="{{item_list.length == 0}}" description="什么也没找到T^T" image="search" />
+
+  <view wx:for="{{item_list}}">
+    <navigator url="../Deal_detail/Deal_detail?id={{item._id}}">
+      <van-card
+        num="{{item.number}}"
+        price="{{item.price}}"
+        desc="{{item.detail}}"
+        title="{{item.title}}"
+        thumb="{{item.picture[0]}}"
+        custom-class="card"
+      ></van-card>
+    </navigator>
+  </view>
+</view>

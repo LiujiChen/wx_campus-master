@@ -1,0 +1,29 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/Post/Post",
+                    "pathName": "pages/Post/Post",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Forum/Forum_info/Forum_info",
+                    "pathName": "pages/Forum/Forum_info/Forum_info",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

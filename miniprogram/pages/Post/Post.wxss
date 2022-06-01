@@ -1,0 +1,168 @@
+page {
+  height: 100%;
+  background: rgb(248, 248, 248);
+  color: black;
+}
+
+.page-body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.container {
+  width: 650rpx;
+  margin: 60rpx auto;
+  overflow: hidden;
+}
+
+.container .box {
+  width: 250rpx;
+  height: 250rpx;
+  margin: 10rpx 35rpx;
+  border: 1rpx rgb(163, 178, 184) solid;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx rgba(0, 0, 0, 0.2);
+  text-align: center;
+  overflow: hidden;
+  float: left;
+}
+
+.container .box image {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 10rpx auto;
+  margin-bottom: 0;
+  border-radius: 10rpx;
+  /* box-shadow: 1rpx 1rpx 1rpx 1rpx rgba(0, 0, 0, 0.1); */
+}
+
+.container .box .font {
+  width: 250rpx;
+  margin-top: 0;
+  color: white;
+  font: 400 40rpx "黑体";
+}
+.TabBar{
+  width:100%;
+  height: 200rpx;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+.TabBar .LineBox{
+  width:110%;
+  height: 400rpx;
+  position: absolute;
+  left: -5%;
+  
+  bottom: -250rpx;
+  /* background-color: black; */
+  border-radius: 200% 200% 0 0;  
+  /* border-radius: 50%; */
+  border-top: 1rpx solid 	#556B2F;
+  background-color: 	#F0FFF0;
+  z-index: -1;  
+}
+
+.iconImage{
+  width:100rpx;
+  height: 100rpx;
+  position: absolute;
+}
+
+.TopBox{
+  width:100%;
+  height: 200rpx;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.TopBox  .LineBox{
+  width:110%;
+  height: 400rpx;
+  position: absolute;
+  left: -5%;
+  
+  top: -250rpx;
+  /* background-color: black; */
+  border-radius: 0 0 200% 200%;  
+  /* border-radius: 50%; */
+
+  border-bottom: 1rpx solid 	#556B2F;
+  background-color: 	 #68CCC5;
+  z-index: -1;
+  
+}
+
+.PostBlock{
+  position: absolute;
+  top:220rpx;
+  height:1000rpx;
+  width:100%;
+  overflow: hidden;
+  /* background-color: black; */
+}
+
+.PostBlock .recorder{
+  position: relative;
+  height: 250rpx;
+  width: 650rpx;
+  margin: 0rpx auto;
+  overflow: hidden;
+  /* background-color: white; */
+}
+
+.PostBlock .recorder .outBox{
+  height: 150rpx;
+  width:  150rpx;
+  border: 1rpx solid #556B2F;
+  border-radius: 40%;
+  margin: 50rpx 0;
+  margin-left:60rpx;
+  text-align: center;
+  
+}
+
+.PostBlock .recorder .outBox image{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 25rpx auto;
+}
+
+.PostBlock .recorder .inBox{
+  position: absolute;
+  top: 60rpx;
+  left: 70rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.3);
+  border-radius: 40%;
+}
+
+.PostBlock .recorder .font{
+  position: absolute;
+  top:60rpx;
+  left:200rpx;
+  height:60rpx;
+  width: 200rpx;
+  font: 400 30rpx "黑体";
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.PostBlock .recorder .subfont{
+  position: absolute;
+  top:100rpx;
+  left:250rpx;
+  height:60rpx;
+  width: 400rpx;
+  font: 400 30rpx "黑体";
+  line-height: 60rpx;
+  text-align: left;
+  color:grey;
+}

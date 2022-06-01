@@ -1,0 +1,203 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "db guide",
+                    "pathName": "pages/databaseGuide/databaseGuide",
+                    "query": ""
+                },
+                {
+                    "name": "pages/person/person",
+                    "pathName": "pages/person/person",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Post/Post",
+                    "pathName": "pages/Post/Post",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "Deal_detail",
+                    "pathName": "pages/Deal/Deal_detail/Deal_detail",
+                    "query": "pages/Deal/Deal_detail/Deal_detail",
+                    "scene": null
+                },
+                {
+                    "name": "Deal_info",
+                    "pathName": "pages/Deal/Deal_info/Deal_info",
+                    "query": "pages/Deal/Deal_info/Deal_info",
+                    "scene": null
+                },
+                {
+                    "name": "Forum_info",
+                    "pathName": "pages/Forum/Forum_info/Forum_info",
+                    "query": "pages/Forum/Forum_info/Forum_info",
+                    "scene": null
+                },
+                {
+                    "name": "Forum_detail",
+                    "pathName": "pages/Forum/Forum_detail/Forum_detail",
+                    "query": "pages/Forum/Forum_detail/Forum_detail",
+                    "scene": null
+                },
+                {
+                    "name": "Find_info",
+                    "pathName": "pages/LAF/Find_info/Find_info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "Find_detail",
+                    "pathName": "pages/LAF/Find_detail/Find_detail",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/person/MyFavor_post/MyFavor_post",
+                    "pathName": "pages/person/MyFavor_post/MyFavor_post",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Activity/Activity_info/Activity_info",
+                    "pathName": "pages/Activity/Activity_info/Activity_info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Deal/post_deal/post_deal",
+                    "pathName": "pages/Deal/post_deal/post_deal",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Activity/Activity_detail/Activity_detail",
+                    "pathName": "pages/Activity/Activity_detail/Activity_detail",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Activity/post_activity/post_activity",
+                    "pathName": "pages/Activity/post_activity/post_activity",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Activity/Activity_info/Activity_info",
+                    "pathName": "pages/Activity/Activity_info/Activity_info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/tpage/tpage",
+                    "pathName": "pages/tpage/tpage",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Activity/post_activity/post_activity",
+                    "pathName": "pages/Activity/post_activity/post_activity",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/LAF/post_find/post_find",
+                    "pathName": "pages/LAF/post_find/post_find",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Forum/Post_forum/Post_forum",
+                    "pathName": "pages/Forum/Post_forum/Post_forum",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/LAF/Find_info/Find_info",
+                    "pathName": "pages/LAF/Find_info/Find_info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Deal/post_deal/post_deal",
+                    "pathName": "pages/Deal/post_deal/post_deal",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Forum/Post_forum/Post_forum",
+                    "pathName": "pages/Forum/Post_forum/Post_forum",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/LAF/edit_find/edit_find",
+                    "pathName": "pages/LAF/edit_find/edit_find",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Activity/Activity_info/Activity_info",
+                    "pathName": "pages/Activity/Activity_info/Activity_info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Forum/Post_forum/Post_forum",
+                    "pathName": "pages/Forum/Post_forum/Post_forum",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Deal/Deal_detail/Deal_detail",
+                    "pathName": "pages/Deal/Deal_detail/Deal_detail",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Activity/post_activity/post_activity",
+                    "pathName": "pages/Activity/post_activity/post_activity",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/LAF/edit_find/edit_find",
+                    "pathName": "pages/LAF/edit_find/edit_find",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Forum/Post_forum/Post_forum",
+                    "pathName": "pages/Forum/Post_forum/Post_forum",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

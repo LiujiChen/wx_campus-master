@@ -1,0 +1,104 @@
+<view class="page-body">
+  <!-- 图片 -->
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{item.picture}}">
+      <view class="swiper-box">
+        <image src="{{item}}" bindtap="preview_picture" data-src="{{item}}"/>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 以下代码留作备用 -->
+  <!-- 所属类别： -->
+  <!-- <view class="recorder" style="color: rgb(255, 202, 40);">
+        <image src="https://i.loli.net/2021/05/05/cDPJ1TUpsnjl7AH.png"></image>
+        <view class="font">所属类别：{{item_record.type}}</view>
+  </view>-->
+  <!-- 时间： -->
+  <!-- <view class="recorder" style="color: rgb(18, 150, 219);">
+        <image src="https://i.loli.net/2021/05/03/eiruDYARn4MXwsK.png"></image>
+        <view class="font">发布时间：{{item_record.time_found}}</view>
+  </view>-->
+  <!-- 价格 -->
+  <!-- <view class="recorder" style="color: rgb(255, 202, 40);">
+      <image src="https://ftp.bmp.ovh/imgs/2021/05/6bc3325a9c93b838.png"></image>
+      <view class="font">拟定价格：{{item_record.pirce}}</view>
+  </view>-->
+  <!-- 联系方式： -->
+  <!-- <view class="recorder" style="color: rgb(229, 117, 174);">
+        <image src="https://i.loli.net/2021/05/03/rHzAWaoPBKNh3wx.png"></image>
+        <view class="font">联系方式：{{item_record.contact}}</view>
+  </view>-->
+  <!-- 描述： -->
+  <!-- <view class="recorder" style="color: rgba(8, 222, 125,0.7);">
+        <image src="https://i.loli.net/2021/05/03/y6JbWw9pPvBujSt.png"></image>
+        <view class="font">
+            描述：{{item_record.detail}}
+        </view>
+  </view>-->
+  <!-- 我要领取 -->
+  <!-- <view wx:if="{{!item_record.is_found}}" class="btn" bindtap="get">我要领取</view> -->
+  <!-- <view class="{{item_record.is_found?'hide':'btn'}}" bindtap="get">我要领取</view>
+    <van-dialog use-slot title="提示" show="{{ flag }}" show-cancel-button confirm-button-open-type="getUserInfo"
+        bind:close="onClose" bind:getuserinfo="getUserInfo" bind:confirm="onConfirm">
+        <view class="tip">请确认是您的遗失物品</view>
+  </van-dialog>-->
+
+  <view class="container">
+    <image src="https://ftp.bmp.ovh/imgs/2021/05/64148d9da95c3e97.png" />
+    <view class="font">{{item.price}}</view>
+
+    <view class="favorite">
+      <image src="{{is_active?favorite_active:favorite_inactive}}" bindtap="changeIconFavorite" />
+    </view>
+
+    <view class="title">{{item.title}}</view>
+  </view>
+
+
+
+    <van-cell-group >
+
+      <van-cell
+        value-class="value"
+        title="商品数量"
+        value="{{item.number}} 个"
+        size="large"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/ab8fd4092e676073.png"
+      />
+
+      <van-cell
+        value-class="value"
+        title="类型"
+        value="{{item.type}}"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/378a02054b4bf607.png"
+      />
+
+      <van-cell
+        value-class="value"
+        title="可交易区域"
+        value="{{item.zone}}"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/860384e38aa0784e.png"
+      />
+
+      <van-cell
+        value-class="value"
+        title="联系方式"
+        value="{{item.contact}}"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/ff0a05a76c4bf4ac.png"
+      />
+
+      <van-field
+        autosize
+        intput-class="textInput"
+        clearable
+        label="商品详情"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/e0d11f4178e9db7e.png"
+        value="{{item.detail}}"
+        input-align="right"
+        readonly="true"
+        type="textarea"
+      />
+    </van-cell-group>
+  
+</view>

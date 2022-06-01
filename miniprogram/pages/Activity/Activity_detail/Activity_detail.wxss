@@ -1,0 +1,68 @@
+/* pages/Activity/Activity_detail/Activity_detail.wxss */
+page {
+  height: 100%;
+  width: 100%;
+  background: rgb(248, 248, 248);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: black;
+}
+
+.page-body {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 100rpx;
+}
+
+.nav {
+  width: 100%;
+  height: 70rpx;
+  font: 700 40rpx "黑体";
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.nav .left-box {
+  width: 15rpx;
+  height: 50rpx;
+  margin: 10rpx 15rpx;
+  border-radius: 25%;
+  background-color: #68CCC5;
+  float: left;
+}
+
+.title-box {
+  width: 700rpx;
+  height: 100rpx;
+  margin: 20rpx auto;
+}
+
+swiper {
+  width: 100%;
+  height: 722rpx;
+  margin-bottom: 50rpx;
+}
+
+.swiper-box {
+  height: 660rpx;
+  width: 550rpx;
+  margin: 0 auto;
+  /* border-radius: 60rpx; */
+  background-color: white;
+}
+
+.swiper-box image {
+  height: 660rpx;
+  width: 550rpx;
+  margin: 0 auto;
+  /* border-radius: 60rpx; */
+  background-color: rgb(244, 244, 244);
+}
+
+.informationBlock{
+	width:730rpx;
+	margin: 0rpx 10rpx;
+	border-radius:10rpx;
+	background-color:white;
+}

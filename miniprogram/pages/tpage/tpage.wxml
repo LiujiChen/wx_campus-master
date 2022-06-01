@@ -1,0 +1,12 @@
+<!-- 当已经授权的时候 -->
+<view wx:if="{{result == 'ok'}}" class="result">
+  <view class="headimg">
+    <image src="{{avatarUrl}}" />
+  </view>
+  <view class="nickname">{{nickName}}</view>
+</view>
+<!-- 当未授权的时候 -->
+<view wx:else class="result">
+  <view>未授权</view>
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>

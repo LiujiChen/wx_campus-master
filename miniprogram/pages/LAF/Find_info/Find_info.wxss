@@ -1,0 +1,150 @@
+/* pages/LAF/Find_info/Find_info.wxss */
+page {
+    height: 100%;
+    background: rgb(248, 248, 248);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: black;
+}
+
+.page-body {
+    padding-top: 10rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.nav {
+    width: 600rpx;
+    height: 60rpx;
+    /* font: 700 30rpx "黑体"; */
+    line-height: 60rpx;
+}
+
+.nav image {
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 20rpx;
+    float: left;
+}
+
+/* 下拉菜单样式覆盖 */
+.menu {
+    border-width: 0;
+    height: 1000rpx !important;
+}
+
+.container {
+    height: 300rpx;
+    width: 100%;
+    margin: 20rpx auto;
+    background-color: white;
+    /* background:-webkit-linear-gradient(left,	#FFF5EE,pink); */
+    border-radius: 10rpx;
+    overflow: hidden;
+    position: relative;
+    /* box-shadow: 3rpx 3rpx 3rpx 3rpx rgba(0, 0, 0, 0.3); */
+}
+
+/* 已领取 */
+.container .recieved {
+    position: absolute;
+    width: 110rpx;
+    height: 110rpx;
+}
+
+/* 存放的描述图片 */
+.container .image {
+    height: 240rpx;
+    width: 180rpx;
+    background-color: white;
+    margin: 30rpx 0;
+    margin-left: 50rpx;
+    margin-right: 10rpx;
+    border-radius: 20rpx;
+    float: left;
+}
+
+/* 说明的一行 */
+.container .recorder {
+    height: 50rpx;
+    width: 450rpx;
+    margin: 13rpx 10rpx;
+    float: left;
+}
+
+/* 说明一行的左边小图标 */
+.container .recorder image {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 10rpx 5rpx;
+    margin-top: 20rpx;
+    float: left;
+}
+
+/* 说明的文字 */
+.container .recorder .word {
+    height: 50rpx;
+    width: 380rpx;
+    margin: 10rpx 10rpx;
+    font: 700 30rpx "楷体";
+    line-height: 50rpx;
+    display: inline-block;
+}
+
+/* 详情位置 */
+.container .detail {
+    position: absolute;
+    left: 650rpx;
+    top: 230rpx;
+    color: grey;
+    font: 700 28rpx "黑体";
+    color: orangfe;
+}
+
+.hide {
+    display: none !important;
+    margin-bottom: 100rpx;
+}
+
+.none {
+    color: rgb(163, 178, 184);
+    font: 400 30rpx "黑体";
+    text-align: center;
+    line-height: 80rpx;
+}
+
+/* 悬浮按钮 */
+.movable-area {
+    /* 这个属性设置为none,让所有事件穿透过去 */
+    pointer-events: none;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.movable-view {
+    /* // 重设为auto,覆盖父属性设置 */
+    pointer-events: auto !important;
+    height: 75rpx;
+    width: 75rpx;
+    border-radius: 50%;
+    border: 2rpx solid rgba(0, 0, 0, 0.2);
+    /* box-shadow: 3rpx 3rpx 3rpx 3rpx rgba(0, 0, 0, 0.3); */
+    background-color: white;
+    position: absolute;
+    top: 800rpx;
+    left: 600rpx;
+}
+
+.movable-view image {
+    width: 45rpx;
+    height: 45rpx;
+    margin: 15rpx 15rpx;
+}

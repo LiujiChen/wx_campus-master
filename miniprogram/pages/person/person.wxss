@@ -1,0 +1,98 @@
+page {
+    height: 100%;
+    background: rgb(248, 248, 248);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: black;
+}
+
+.page-body {
+    padding-top: 10rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.nav {
+    width: 100%;
+    height: 300rpx;
+    background-color:#68CCC5;
+    /* box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2); */
+    border-radius:0 0 15% 15%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.nav .pic {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 40rpx auto;
+    border-radius: 50%;
+    /* background-color: black; */
+    overflow: hidden;
+}
+
+.bigbox {
+    width: 700rpx;
+    margin: 100rpx auto;
+    background-color: #fff;
+    padding: 15rpx 10rpx;
+}
+
+.bigbox .recorder {
+    width: 700rpx;
+    margin: 30rpx auto;
+    background-color: white;
+    border-radius: 10rpx;
+    font: 400 35rpx "黑体";
+    line-height: 70rpx;
+    position: relative;
+}
+
+.bigbox .recorder .image {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 20rpx 10rpx;
+    float: left;
+}
+
+.bigbox .recorder .rightImage {
+    position: absolute;
+    left: 650rpx;
+    top: 20rpx;
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.TabBar{
+    width:100%;
+    height: 200rpx;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+  }
+
+.TabBar .LineBox{
+    width:110%;
+    height: 400rpx;
+    position: absolute;
+    left: -5%;
+    
+    bottom: -250rpx;
+    /* background-color: black; */
+    border-radius: 200% 200% 0 0;  
+    /* border-radius: 50%; */
+    border-top: 1rpx solid 	#556B2F;
+    background-color: 	#F0FFF0;
+    z-index: -1;  
+  }
+  
+  .iconImage{
+    width:100rpx;
+    height: 100rpx;
+    position: absolute;
+  }
+
+  .label {
+      font-size: 30rpx !important;
+  }

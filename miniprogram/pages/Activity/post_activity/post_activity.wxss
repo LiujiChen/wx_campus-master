@@ -1,0 +1,125 @@
+page {
+  height: 100%;
+  width: 100%;
+  background: rgb(248, 248, 248);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: black;
+}
+
+.page-body {
+  height: 100%;
+  width: 100%;
+}
+/* 
+.nav{
+  width:100%;
+  height:70rpx;
+  background-color:white;
+  border-radius:10rpx;
+  display:inline-block;
+}
+
+.nav .Box{
+  width:500rpx;
+  margin-top:20rpx;
+  font:400 35rpx "黑体";
+  display:inline-block;
+}
+.nav .image{
+  width: 70rpx;
+  height: 70rpx;
+  float:left;
+  margin: 5rpx 5rpx;
+} */
+
+
+.nav {
+  width: 100%;
+  height: 70rpx;
+  font: 700 40rpx "黑体";
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.nav .left-box {
+  width: 15rpx;
+  height: 50rpx;
+  margin: 10rpx 15rpx;
+  border-radius: 25%;
+  background-color: #68CCC5;
+  float: left;
+}
+
+.title-box {
+  width: 700rpx;
+  height: 100rpx;
+  margin: 20rpx auto;
+}
+
+
+.uploadImage{
+  width:100%;
+  margin: 10rpx 0;
+  background: rgb(248, 248, 248);
+  overflow: hidden;
+}
+
+.uploadImage .previewImageBox{
+  width:230rpx;
+  height:276rpx;
+  margin: 10rpx 10rpx;
+  /* border-radius:23rpx; */
+  background-color:white;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.uploadImage .previewImageBox .delete {
+  position: absolute;
+  right:-2rpx;
+  top:-2rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background-image: url("https://ftp.bmp.ovh/imgs/2021/05/467f550faff02d68.png");
+  background-size: 100% 100%;
+}
+
+.uploadImage .previewImageBox .delete:active {
+  background-image: url("https://ftp.bmp.ovh/imgs/2021/05/a8a08ff07997dcbf.png");
+}
+.uploadImage .previewImageBox .add{
+  width: 35%;
+  height: 30%;
+  margin: 96rpx auto;
+}
+.previewImageBox .image{
+  width:100%;
+  height:100%;
+  /* border-radius:23rpx; */
+  background-color:white;
+  display:inline-block;
+}
+
+.informationBlock{
+  width:100%;
+  height:468rpx;
+  margin: 10rpx 15rpx;
+  border-radius: 10rpx;
+  background-color: white;
+}
+
+.Button{
+  background-color: #68CCC5;
+  width: 525rpx;
+  height: 80rpx;
+  margin: 50rpx auto;
+  border-radius: 10rpx;
+  text-align: center;
+  font: 400 30rpx "黑体";
+  line-height: 80rpx;
+  color: white;
+}
+

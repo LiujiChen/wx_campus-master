@@ -1,0 +1,269 @@
+<view class="page-body">
+  <van-toast id="van-toast" />
+  <view class="nav">
+    <view class="left-box"></view>我的收藏与发布
+  </view>
+  <!-- <view class="nav">
+        <image src="https://i.loli.net/2021/05/15/8DEPj1tUlMT5GnL.png"></image>
+  我的收藏与发布</view>-->
+  <van-tabs active="{{ active }}" bind:change="onChange" color="#68CCC5" animated>
+    <van-tab title="{{sidebar_chosen_item===0?'领取':'收藏'}}">
+      <!-- 查询空状态 -->
+      <van-empty
+        wx:if="{{find_rec_item.length == 0 && sidebar_chosen_item === 0}}"
+        description="什么也没找到T^T"
+        image="search"
+      />
+      <van-empty
+        wx:if="{{forum_fav_item.length == 0 && sidebar_chosen_item === 1}}"
+        description="什么也没找到T^T"
+        image="search"
+      />
+      <van-empty
+        wx:if="{{deal_fav_item.length == 0 && sidebar_chosen_item === 2}}"
+        description="什么也没找到T^T"
+        image="search"
+      />
+      <!-- 领取/收藏界面 -->
+      <!-- 失物招领 -->
+
+      <view class="container" wx:if="{{sidebar_chosen_item === 0}}" wx:for="{{find_rec_item}}">
+        <!-- 详情跳转 -->
+        <navigator url="../../LAF/Find_detail/Find_detail?id={{item._id}}">
+          <view class="inf">
+            <view class="find_container">
+              <!-- 标明是否已经取走 -->
+              <!-- <image class="recieved" src="https://i.loli.net/2021/05/03/OnEXSfaVbPvYopd.png" wx:if="{{true}}">
+              </image>-->
+              <!-- 上传的图片 -->
+              <image class="image" src="{{item.picture}}" lazy-load="true" />
+              <view class="recorder" style="margin-top:40rpx;">
+                <image src="https://i.loli.net/2021/05/03/IhLar73B1Wm9edK.png" />
+                <!-- 地点  -->
+                <view class="word">地点：{{item.location}}</view>
+              </view>
+              <view class="recorder">
+                <image src="https://i.loli.net/2021/05/03/eiruDYARn4MXwsK.png" />
+                <!-- 时间  -->
+                <view class="word">时间：{{item.time_found}}</view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+        <view
+          class="tab"
+          style="width: 100%"
+          bindtap="cancelFindCollection"
+          data-id="{{item._id}}"
+          data-index="{{index}}"
+        >取消领取</view>
+      </view>
+
+      <!-- 校园论坛 -->
+      <view class="container" wx:if="{{sidebar_chosen_item === 1}}" wx:for="{{forum_fav_item}}">
+        <!-- 详情跳转 -->
+        <navigator url="../../Forum/Forum_detail/Forum_detail?id={{item._id}}">
+          <view class="inf">
+            <view class="forum_container">
+              <!-- <navigator url="../Forum_detail/Forum_detail?id={{item._id}}"> -->
+              <view class="title">{{item.title}}</view>
+              <view class="label">{{item.tag}}</view>
+              <image class="img" src="{{item.user_image}}"></image>
+              <view class="name">{{item.user_name}}</view>
+              <view class="tim">{{item.time_publish}}</view>
+            </view>
+          </view>
+        </navigator>
+        <view
+          class="tab"
+          style="width: 100%"
+          bindtap="cancelForumCollection"
+          data-id="{{item._id}}"
+          data-index="{{index}}"
+        >取消收藏</view>
+      </view>
+
+      <!-- 商品交易 -->
+      <view
+        class="container"
+        wx:if="{{sidebar_chosen_item === 2}}"
+        wx:for="{{deal_fav_item}}"
+        style="height:270rpx;"
+      >
+        <!-- 详情跳转 -->
+        <navigator url="../../Deal/Deal_detail/Deal_detail?id={{item._id}}">
+          <view class="inf" style="height:200rpx;">
+            <van-card
+              num="{{item.number}}"
+              price="{{item.price}}"
+              desc="{{item.detail}}"
+              title="{{item.title}}"
+              thumb="{{item.picture[0]}}"
+              custom-class="card"
+            ></van-card>
+          </view>
+        </navigator>
+        <view
+          class="tab"
+          style="width: 100%"
+          bindtap="cancelDealCollection"
+          data-id="{{item._id}}"
+          data-index="{{index}}"
+        >取消收藏</view>
+      </view>
+    </van-tab>
+    <van-tab title="发布">
+      <van-empty
+        wx:if="{{find_pub_item.length == 0 && sidebar_chosen_item === 0}}"
+        description="什么也没找到T^T"
+        image="search"
+      />
+      <van-empty
+        wx:if="{{forum_pub_item.length == 0 && sidebar_chosen_item === 1}}"
+        description="什么也没找到T^T"
+        image="search"
+      />
+      <van-empty
+        wx:if="{{deal_pub_item.length == 0 && sidebar_chosen_item === 2}}"
+        description="什么也没找到T^T"
+        image="search"
+      />
+
+      <!-- 失物招领发布 -->
+      <view class="container" wx:if="{{sidebar_chosen_item === 0}}" wx:for="{{find_pub_item}}">
+        <!-- 详情跳转 -->
+        <navigator url="../../LAF/Find_detail/Find_detail?id={{item._id}}">
+          <view class="inf">
+            <view class="find_container">
+              <!-- 标明是否已经取走 -->
+              <!-- <image class="recieved" src="https://i.loli.net/2021/05/03/OnEXSfaVbPvYopd.png" wx:if="{{true}}">
+              </image>-->
+              <!-- 上传的图片 -->
+              <image class="image" src="{{item.picture}}" lazy-load="true" />
+              <view class="recorder" style="margin-top:40rpx;">
+                <image src="https://i.loli.net/2021/05/03/IhLar73B1Wm9edK.png" />
+                <!-- 地点  -->
+                <view class="word">地点：{{item.location}}</view>
+              </view>
+              <view class="recorder">
+                <image src="https://i.loli.net/2021/05/03/eiruDYARn4MXwsK.png" />
+                <!-- 时间  -->
+                <view class="word">时间：{{item.time_found}}</view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+        <navigator
+          url="../../LAF/edit_find/edit_find?id={{item._id}}"
+          style="display:inline-block;"
+        >
+          <view class="tab">编辑</view>
+        </navigator>|
+        <view class="tab" bindtap="recallFind" data-index="{{index}}">撤回</view>
+        <van-dialog
+          use-slot
+          title="提示"
+          show="{{ show_find_recall_confirm }}"
+          show-cancel-button
+          confirm-button-open-type="getUserInfo"
+          bind:confirm="recallFindConfirm"
+          bind:close="recallFindCancel"
+          bind:getuserinfo="getUserInfo"
+        >
+          <view class="tip">确认要撤回这条信息吗</view>
+        </van-dialog>
+      </view>
+
+      <!-- 校园论坛发布 -->
+      <view class="container" wx:if="{{sidebar_chosen_item === 1}}" wx:for="{{forum_pub_item}}">
+        <!-- 详情跳转 -->
+        <navigator url="../../Forum/Forum_detail/Forum_detail?id={{item._id}}">
+          <view class="inf">
+            <view class="forum_container">
+              <!-- <navigator url="../Forum_detail/Forum_detail?id={{item._id}}"> -->
+              <view class="title">{{item.title}}</view>
+              <view class="label">{{item.tag}}</view>
+              <image class="img" src="{{item.user_image}}"></image>
+              <view class="name">{{item.user_name}}</view>
+              <view class="tim">{{item.time_publish}}</view>
+              <!-- </navigator> -->
+            </view>
+          </view>
+        </navigator>
+        <navigator
+          url="../../Forum/edit_forum/edit_forum?id={{item._id}}"
+          style="display:inline-block;"
+        >
+          <view class="tab" style="border-right: 2rpx solid rgba(0,0,0,0.2);">编辑</view>
+        </navigator>
+        <view class="tab" bindtap="recallForum" data-index="{{index}}">撤回</view>
+        <van-dialog
+          use-slot
+          title="提示"
+          show="{{ show_forum_recall_confirm }}"
+          show-cancel-button
+          confirm-button-open-type="getUserInfo"
+          bind:confirm="recallForumConfirm"
+          bind:close="recallForumCancel"
+          bind:getuserinfo="getUserInfo"
+        >
+          <view class="tip">确认要撤回这条信息吗</view>
+        </van-dialog>
+      </view>
+      <!-- 商品交易发布 -->
+      <view
+        class="container"
+        wx:if="{{sidebar_chosen_item === 2}}"
+        wx:for="{{deal_pub_item}}"
+        style="height:270rpx;"
+      >
+        <!-- 详情跳转 -->
+        <navigator url="../../Deal/Deal_detail/Deal_detail?id={{item._id}}">
+          <view class="inf" style="height:200rpx;">
+            <van-card
+              num="{{item.number}}"
+              price="{{item.price}}"
+              desc="{{item.detail}}"
+              title="{{item.title}}"
+              thumb="{{item.picture[0]}}"
+              custom-class="card"
+            ></van-card>
+          </view>
+        </navigator>
+        <navigator
+          url="../../Deal/edit_deal/edit_deal?id={{item._id}}"
+          style="display:inline-block;"
+        >
+          <view class="tab" style="border-right: 2rpx solid rgba(0,0,0,0.2);">编辑</view>
+        </navigator>
+        <view class="tab" bindtap="recallDeal" data-index="{{index}}">撤回</view>
+        <van-dialog
+          use-slot
+          title="提示"
+          show="{{ show_deal_recall_confirm }}"
+          show-cancel-button
+          confirm-button-open-type="getUserInfo"
+          bind:confirm="recallDealConfirm"
+          bind:close="recallDealCancel"
+          bind:getuserinfo="getUserInfo"
+        >
+          <view class="tip">确认要撤回这条信息吗</view>
+        </van-dialog>
+      </view>
+    </van-tab>
+  </van-tabs>
+  <!-- 侧边栏 -->
+  <van-sidebar
+    active-key="{{sidebar_chosen_item}}"
+    custom-class="sidebar"
+    bind:change="sidebarOnChange"
+  >
+    <van-sidebar-item
+      wx:for="{{sidebar_list}}"
+      title="{{item}}"
+      custom-class="{{sidebar_chosen_item == index?'sidebar-item-active':'sidebar-item-unactive'}}"
+    />
+  </van-sidebar>
+</view>
+        
+    

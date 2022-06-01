@@ -1,0 +1,208 @@
+<view class="page-body">
+  <!-- <button class="btn" wx:if="{{is_first}}" catchtap="GetUserInfo">登录</button> -->
+
+  <!-- 首页轮播图
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item>
+      <view class="swiper-box"></view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-box"></view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-box"></view>
+    </swiper-item>
+  </swiper> -->
+  <van-transition name="fade" duration="1500">
+    <view class="topNav">
+      <!-- 用户微信头像 -->
+      <!-- <image src="{{person.userAvatarUrl}}" /> -->
+      <image class="pic" src="../icons/logo.png" />
+      <!-- 昵称 -->
+      <view class="name" >
+        <text>重大知鹦</text>
+      </view>
+    </view>
+  </van-transition>
+
+
+  <view class="container-box">
+    <view class="nav">
+      <view class="left-box"></view>校园助手
+    </view>
+
+    <navigator url="../Forum/Forum_info/Forum_info">
+      <view class="little_box">
+        <view class="out_item">
+          <image src="../icons/comments.png" />
+          <view class="in_item"></view>
+          <view class="font">校园论坛</view>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url="../LAF/Find_info/Find_info">
+      <view class="little_box">
+        <view class="out_item">
+          <image src="../icons/doc-search.png" />
+          <view class="in_item"></view>
+          <view class="font">失物招领</view>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url="../Deal/Deal_info/Deal_info">
+      <view class="little_box">
+        <view class="out_item">
+          <image src="../icons/commodity.png" />
+          <view class="in_item"></view>
+          <view class="font">闲置交易</view>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url="../Activity/Activity_info/Activity_info">
+      <view class="little_box">
+        <view class="out_item">
+          <image src="../icons/mark.png" />
+          <view class="in_item"></view>
+          <view class="font">活动组织</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <!-- <navigator url="../Forum/Forum_info/Forum_info">
+      <view class="long-box" style="background-color: rgb(52, 161, 254);">
+        <view class="font">校园论坛</view>
+        <image src="https://ftp.bmp.ovh/imgs/2021/04/af21776625553411.png" />
+      </view>
+    </navigator>
+    <view class="short-box" style="background-color: rgb(224, 155, 218);">
+      <view class="font">学习交流</view>
+      <image src="https://ftp.bmp.ovh/imgs/2021/04/68b7c3e631f98771.png" />
+    </view>
+    <navigator url="../LAF/Find_info/Find_info">
+      <view class="short-box" style="background-color: rgb(241, 105, 105);">
+        <view class="font" bindtap="find">失物招领</view>
+        <image src="https://ftp.bmp.ovh/imgs/2021/04/53667964d2fc621f.png" />
+      </view>
+    </navigator>
+    <view class="long-box" style="background-color: rgb(157, 234, 138);">
+      <view class="font">活动组织</view>
+      <image src="https://ftp.bmp.ovh/imgs/2021/04/c392ec1109147b39.png" />
+    </view>
+    <navigator url="../Deal/Deal_info/Deal_info">
+      <view class="short-box" style="background-color: rgb(236, 224, 54);">
+        <view class="font">闲置交易</view>
+        <image src="https://ftp.bmp.ovh/imgs/2021/04/373fb1ccf9d1e209.png" />
+      </view>
+    </navigator>
+    <view class="short-box" style="background-color: rgb(244, 149, 119);">
+      <view class="font" style="line-height:80rpx;">其他</view>
+    </view>
+  </view>-->
+
+  <view class="noticeBlock">
+    <view class="nav">
+      <view class="left-box"></view>通知公告
+    </view>
+
+    <van-cell-group border="{{false}}">
+      <van-cell
+        title="v2.0版本正式发布！"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/1c5200f446fd72e2.png"
+        is-link
+        bindtap="showDetail1"
+        border="{{false}}"
+      />
+    </van-cell-group>
+
+    <van-dialog
+      use-slot
+      title="小程序使用方法"
+      show="{{ show_detail1 }}"
+      show-cancel-button
+      confirm-button-open-type="getUserInfo"
+      bind:close="closeDetail"
+      bind:getuserinfo="getUserInfo"
+    >
+    <van-steps steps="{{ steps[row] }}" active="{{ active }}" />
+      <van-empty
+        image="ht`tps://ftp.bmp.ovh/imgs/2021/05/d823e72cbfd6e165.png"
+        description="经过开发团队的日日夜夜的不懈努力我们终于发布了v2.0版本"
+      />
+      <view bindtap="lastStep">上一步</view>
+      <view bindtap="nextStep">下一步</view>
+    </van-dialog>
+
+    <van-cell
+      title="修复bug"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/1c5200f446fd72e2.png"
+      is-link
+      bindtap="showDetail2"
+      border="{{false}}"
+    />
+
+    <van-dialog
+      use-slot
+      title="bug修复"
+      show="{{ show_detail2 }}"
+      show-cancel-button
+      confirm-button-open-type="getUserInfo"
+      bind:close="closeDetail"
+      bind:getuserinfo="getUserInfo"
+    >
+      <van-empty
+        image="https://i.loli.net/2021/05/21/GhgluD31dFsxIJX.png"
+        description="2021.5.21 修改了数据库上限查询的bug"
+      />
+    </van-dialog>
+    <van-cell-group border="{{false}}">
+      <van-cell
+        title="v1.0版本正式发布！"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/1c5200f446fd72e2.png"
+        is-link
+        bindtap="showDetail3"
+        border="{{false}}"
+      />
+    </van-cell-group>
+
+    <van-dialog
+      use-slot
+      title="v1.0版本正式发布！"
+      show="{{ show_detail3 }}"
+      show-cancel-button
+      confirm-button-open-type="getUserInfo"
+      bind:close="closeDetail"
+      bind:getuserinfo="getUserInfo"
+    >
+      <van-empty
+        image="https://ftp.bmp.ovh/imgs/2021/05/d823e72cbfd6e165.png"
+        description="经过开发团队的日日夜夜的不懈努力我们终于发布了v1.0版本"
+      />
+    </van-dialog>
+    
+  </view>
+
+  <van-transition custom-class="block" name="fade" duration="1500">
+    <view class="TabBar">
+      <view class="LineBox"></view>
+
+      <image
+        class="iconImage"
+        src="{{active_index}}"
+        style="left:100rpx; top:30rpx"
+      />
+
+      <image class="iconImage" src="{{inactive_post}}" style="left:330rpx; top:0" bindtap="goPost" />
+
+      <image
+        class="iconImage"
+        src="{{inactive_people}}"
+        style="right:100rpx; top:30rpx"
+        bindtap="goPerson"
+      />
+    </view>
+  </van-transition>
+</view>

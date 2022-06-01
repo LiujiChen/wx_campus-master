@@ -1,0 +1,133 @@
+<view class="page-body">
+  <view class="TopBox">
+    <view class="LineBox"></view>
+  </view>
+
+  <view class="PostBlock">
+    <navigator url="../Forum/Post_forum/Post_forum">
+      <view class="recorder">
+        <view class="outBox">
+          <image class="image" src="../icons/comments.png" />
+          <view class="inBox"></view>
+        </view>
+        <view class="font">校园论坛</view>
+        <view class="subfont">分享我的校园生活</view>
+      </view>
+    </navigator>
+
+    <navigator url="../LAF/post_find/post_find">
+      <view class="recorder">
+        <view class="outBox">
+          <image class="image" src="../icons/doc-search.png" />
+          <view class="inBox"></view>
+        </view>
+        <view class="font">失物招领</view>
+        <view class="subfont">再也不怕在学校里丢东西啦</view>
+      </view>
+    </navigator>
+
+    <navigator url="../Deal/post_deal/post_deal">
+      <view class="recorder">
+        <view class="outBox">
+          <image class="image" src="../icons/commodity.png" />
+          <view class="inBox"></view>
+        </view>
+        <view class="font">闲置交易</view>
+        <view class="subfont">校园交易方便省心</view>
+      </view>
+    </navigator>
+
+    <navigator url="../Activity/post_activity/post_activity">
+      <view class="recorder">
+        <view class="outBox">
+          <image class="image" src="../icons/mark.png" />
+          <view class="inBox"></view>
+        </view>
+        <view class="font">活动组织</view>
+        <view class="subfont">寻找小伙伴 做想做的事</view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="TabBar">
+    <van-transition custom-class="block" name="fade" duration="1500">
+      <view class="LineBox"></view>
+
+      <image
+        class="iconImage"
+        src="{{inactive_index}}"
+        style="left:100rpx; top:30rpx"
+        bindtap="goIndex"
+      />
+
+      <image class="iconImage" src="{{active_post}}" style="left:330rpx; top:0" />
+
+      <image
+        class="iconImage"
+        src="{{inactive_people}}"
+        style="right:100rpx; top:30rpx"
+        bindtap="goPerson"
+      />
+    </van-transition>
+  </view>
+</view>
+
+<!-- <view class="page-body">
+    <van-transition custom-class="block" name="slide-up" duration="700">
+        <view class="container">
+            <navigator url="../LAF/post_find/post_find">
+                <view class="box" style="background-color: rgb(241, 105, 105);">
+                    <image src="https://ftp.bmp.ovh/imgs/2021/04/53667964d2fc621f.png"></image>
+                    <view class="font">失物招领</view>
+                </view>
+            </navigator>
+            <navigator url="../Activity/post_activity/post_activity">
+            <view class="box" style="background-color: rgb(157, 234, 138);">
+                <image src="https://ftp.bmp.ovh/imgs/2021/04/c392ec1109147b39.png"></image>
+                <view class="font">活动组织</view>
+            </view>
+            </navigator>
+        </view>
+
+        <view class="container">
+  <navigator url="../Deal/post_deal/post_deal">
+    <view class="box" style="background-color: rgb(236, 224, 54);">
+      <image src="https://ftp.bmp.ovh/imgs/2021/04/373fb1ccf9d1e209.png" />
+      <view class="font">闲置交易</view>
+    </view>
+  </navigator>
+  <navigator url="../Forum/Post_forum/Post_forum">
+    <view class="box" style="background-color: rgb(52, 161, 254);">
+      <image src="https://ftp.bmp.ovh/imgs/2021/04/af21776625553411.png" />
+      <view class="font">校园论坛</view>
+    </view>
+  </navigator>
+</view>
+
+        <view class="container">
+  <view class="box" style="background:-webkit-linear-gradient(left,#FFA500,#FA8072);">
+    <image src="https://i.loli.net/2021/05/05/1SQkxiwNR3Kr8bf.png" />
+    <view class="font">招募队友</view>
+  </view>
+  <view class="box" style="background:-webkit-linear-gradient(left,#E09BDA,	#BA55D3);">
+    <image src="https://ftp.bmp.ovh/imgs/2021/04/68b7c3e631f98771.png" />
+    <view class="font">学习交流</view>
+  </view>
+  </view>
+    </van-transition>
+    
+    <view class="TabBar">
+      <van-transition custom-class="block" name="fade" duration="1500">
+    <view class="LineBox"></view>
+  
+    <image class="iconImage" src="../icons/home.png"  
+    style="left:100rpx; top:30rpx" bindtap="goIndex"></image>
+    
+    <image class="iconImage" src="../icons/add-one.png" 
+    style="left:330rpx; top:0" bindtap="goPost"></image>
+    
+    <image class="iconImage" src="../icons/people.png" 
+    style="right:100rpx; top:30rpx" bindtap="goPerson"></image>
+    </van-transition>
+  </view>
+</view> -->

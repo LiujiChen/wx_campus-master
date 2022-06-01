@@ -1,0 +1,115 @@
+<!--pages/Deal/Post_deal/Post_deal.wxml-->
+<view class="page-body">
+  <view class="nav">
+    <view class="left-box"></view>请为您的物品添加描述图片：
+  </view>
+
+  <view class="uploadImage">
+    <view class="previewImageBox" wx:for="{{image_list}}">
+      <image class="image" src="{{item}}" />
+      <image class="delete" bindtap="deleteImage" data-index="{{index}}" />
+    </view>
+
+    <view class="previewImageBox" bindtap="addImage">
+      <view class="image">
+        <image class="add" src="https://i.loli.net/2021/05/11/XatEG2gbmcHZuxw.png" />
+      </view>
+    </view>
+  </view>
+
+  <view class="nav">
+    <view class="left-box"></view>请完善您的商品信息：
+  </view>
+
+  <view class="informationBlock">
+    <van-cell-group>
+      <van-field
+        required
+        clearable
+        label="商品名称"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/9d2755daf033d01a.png"
+        bind:blur="submitTitle"
+        size="large"
+      />
+      <van-cell
+        title="商品数量"
+        size="large"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/ab8fd4092e676073.png"
+      >
+        <van-stepper value="{{ 1 }}" min="1" integer bind:change="onChangeStepper" />
+      </van-cell>
+      <van-cell
+        title="可交易区域"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/860384e38aa0784e.png"
+        is-link
+        arrow-direction="down"
+        bindtap="showAreaPopOut"
+        size="large"
+      >{{currArea}}</van-cell>
+
+      <van-cell
+        title="交易物品类型"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/49e8b2ce4179f3fd.png"
+        is-link
+        arrow-direction="down"
+        bindtap="showTypePopOut"
+        size="large"
+      >{{currType}}</van-cell>
+
+      <van-action-sheet
+        show="{{ show_area }}"
+        actions="{{ area_list }}"
+        bind:select="selectArea"
+        bind:close="closePopOut"
+        cancel-text="取消"
+        bind:cancel="closePopOut"
+        size="large"
+      />
+
+      <van-action-sheet
+        show="{{ show_type }}"
+        actions="{{ type_list }}"
+        bind:select="selectType"
+        bind:close="closePopOut"
+        cancel-text="取消"
+        bind:cancel="closePopOut"
+        size="large"
+      />
+
+      <van-field
+        required
+        clearable
+        type="digit"
+        label="拟定的价格"
+        placeholder="注意是单价 可以是小数"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/b910050e32bad317.png"
+        bind:blur="submitPrice"
+        size="large"
+      />
+
+      <van-field
+        required
+        clearable
+        label="联系方式"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/ff0a05a76c4bf4ac.png"
+        placeholder="微信或者QQ等"
+        bind:blur="submitContact"
+        size="large"
+      />
+      <van-field
+        autosize
+        clearable
+        label="商品详情"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/e0d11f4178e9db7e.png"
+        placeholder="描述自己将要出售的物品"
+        bind:blur="submitDetail"
+        size="large"
+        type="textarea"
+      />
+    </van-cell-group>
+  </view>
+
+  <view class="Button" bindtap="submitAll">立即挂出商品</view>
+</view>
+
+

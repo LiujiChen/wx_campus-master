@@ -1,0 +1,186 @@
+<view class="page-body">
+  <!-- 发布时间 -->
+  <view class="nav">
+    <image class="userImg" src="{{item.user_image}}">
+      <!-- <open-data type="userAvatarUrl"></open-data> --></image>
+    <view class="userName">{{item.user_name}}</view>
+    <view class="tim">{{item.time_publish}}</view>
+  </view>
+  <!-- 标题 -->
+  <view class="title">{{item.title}}</view>
+  <!-- 正文部分 -->
+  <van-divider contentPosition="center">正文</van-divider>
+  <view class="container">
+    <editor
+      id="editor"
+      class="ql-container"
+      read-only="{{true}}"
+      placeholder="{{placeholder}}"
+      bindstatuschange="onStatusChange"
+    ></editor>
+    <!-- 赞 -->
+    <view class="img">
+      <image
+        src="{{is_like_active?like_active:like_inactive}}"
+        bindtap="changeLike"
+        animation="{{animation_like}}"
+      />
+      <view class="font">{{item.likes}}</view>
+    </view>
+    <!-- 踩 -->
+    <view class="img">
+      <image
+        src="{{is_unlike_active?unlike_active:unlike_inactive}}"
+        bindtap="changeUnlike"
+        animation="{{animation_dislike}}"
+      />
+      <view class="font">{{item.dislikes}}</view>
+    </view>
+    <!-- 收藏 -->
+    <view class="img">
+      <image
+        src="{{is_favorite_active?favorite_active:favorite_inactive}}"
+        bindtap="changeFavorite"
+        animation="{{animation_favorite}}"
+      />
+    </view>
+    <!-- 评论模块 -->
+    <view>
+      <!-- <van-button
+        block
+        color="linear-gradient(to right, #4bb0ff, #6149f6)"
+        bindtap="showCommentDialog"
+      >点击评论</van-button>
+      <van-dialog
+        use-slot
+        title="标题"
+        show="{{ show_dialog }}"
+        show-cancel-button
+        bind:confirm="onCommentSubmit"
+        bind:cancel="cancelCommentSubmit"
+      >
+        <image src="https://img.yzcdn.cn/1.jpg" />
+        <van-field
+          model:value="{{comment_value}}"
+          clearable
+          label="评论内容"
+          left-icon="https://ftp.bmp.ovh/imgs/2021/05/e0d11f4178e9db7e.png"
+          placeholder="输入评论"
+          type="textarea"
+        />
+      </van-dialog>-->
+
+      <!-- <van-button
+        block
+        color="linear-gradient(to right, #4bb0ff, #6149f6)"
+        bindtap="showComments"
+        wx:if="{{!show_comments}}"
+      >点击展开评论区</van-button>-->
+
+      <van-field
+        value="点击展开评论区"
+        type="text"
+        readonly="{{true}}"
+        input-align="center"
+        fixed="{{true}}"
+        border="{{true}}"
+        right-icon="arrow-down"
+        bind:click-input="showComments"
+        bind:click-icon="showComments"
+        wx:if="{{!show_comments}}"
+        custom-style="border-bottom: 1rpx solid rgb(205, 205, 205);"
+      />
+
+      <!-- <van-button
+        block
+        color="linear-gradient(to right, #4bb0ff, #6149f6)"
+        bindtap="hideComments"
+        wx:if="{{show_comments}}"
+      >点击收起评论区</van-button>-->
+
+      <van-field
+        value="点击收起评论区"
+        type="text"
+        readonly="{{true}}"
+        input-align="center"
+        fixed="{{true}}"
+        border="{{true}}"
+        right-icon="arrow-up"
+        bind:click-input="hideComments"
+        bind:click-icon="hideComments"
+        wx:if="{{show_comments}}"
+        custom-style="border-bottom: 1rpx solid rgb(205, 205, 205);"
+      />
+
+      <!-- 评论区 -->
+      <!-- <view class="box" >
+        <view>
+          <text>内容:{{item.content}}</text>
+          <text>likes:{{item.likes}}</text>
+          <text>发布时间:{{item.time_publish}}</text>
+        </view>
+      </view>-->
+      <view wx:if="{{show_comments}}">
+        <view wx:if="{{best_comments.length != 0}}" style="margin:20rpx 0; color:#68CCC5;" >最热回复</view>
+        <view class="comment" wx:for="{{best_comments}}" wx:if="{{show_comments}}">
+          <!-- 头像 -->
+          <image class="com_userImg" src="{{item.user_image}}" />
+          <view class="com_userName">{{item.user_name}}</view>
+          <view class="com_tim">{{item.time_publish}}</view>
+          <image
+          src="{{item.is_user_like?like_active:like_inactive}}"
+          class="com_likeImg"
+          lazy-load="true"
+          bindtap="changeBestCommentLike"
+          data-index="{{index}}"
+        />
+        <view class="com_likeNum">{{item.likes}}</view>
+        <view class="com_font">{{item.content}}</view>
+      </view>
+      </view>
+
+      <view wx:if="{{show_comments}}">
+        <view wx:if="{{comments.length != 0}}" style="margin:20rpx 0; color:#68CCC5;">全部回复</view>
+      <view class="comment" wx:for="{{comments}}" wx:if="{{show_comments}}">
+        <!-- 头像 -->
+        <image class="com_userImg" src="{{item.user_image}}"></image>
+        <view class="com_userName">{{item.user_name}}</view>
+        <view class="com_tim">{{item.time_publish}}</view>
+          <image
+            src="{{item.is_user_like?like_active:like_inactive}}"
+            class="com_likeImg"
+            lazy-load="true"
+            bindtap="changeCommentLike"
+            data-index="{{index}}"
+          />
+          <view class="com_likeNum">{{item.likes}}</view>
+          <view class="com_font">{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 写评论模块 -->
+<view class="write-box">
+  <van-field
+    value="{{ message }}"
+    type="textarea"
+    placeholder="我也来说两句"
+    autosize="{{ { maxHeight: 100 } }}"
+    border="{{true}}"
+    fixed="{{true}}"
+    left-icon="smile-comment-o"
+    input-class="input"
+    bind:input="onChangeInput"
+  >
+    <van-button
+      slot="button"
+      size="small"
+      open-type="getUserInfo"
+      color="rgb(104, 204, 196)"
+      round
+      bind:getuserinfo="onCommentSubmit"
+    >发表</van-button>
+  </van-field>
+</view>

@@ -1,0 +1,52 @@
+<view class="page-body">
+  <!-- <van-overlay show="{{ !is_ready }}" > -->
+
+  <!-- </van-overlay> -->
+  <!-- <van-toast id="van-toast" /> -->
+
+  <view class="nav">
+    <image src="../../icons/doc-search.png" />失物招领
+  </view>
+
+  <van-dropdown-menu active-color="#68CCC5" custom-class="menu">
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="closed" />
+    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="closed" />
+    <van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" bind:change="closed" />
+    <van-dropdown-item value="{{ value4 }}" options="{{ option4 }}" bind:change="closed" />
+  </van-dropdown-menu>
+
+  <van-empty wx:if="{{item_records.length == 0}}" description="什么也没找到T^T" image="search" />
+  <van-transition custom-class="block" name="slide-up" duration="700">
+    <!-- 整个玩意 -->
+    <view class="container" wx:for="{{item_records}}">
+      <!-- 标明是否已经取走 -->
+      <image
+        class="recieved"
+        src="https://i.loli.net/2021/05/03/OnEXSfaVbPvYopd.png"
+        wx:if="{{item.is_found}}"
+      />
+      <!-- 上传的图片 -->
+      <image
+        class="image"
+        src="{{item.picture}}"
+        data-src="{{item.picture}}"
+        bindtap="preview_picture"
+        lazy-load="true"
+      />
+      <view class="recorder" style="margin-top:40rpx;">
+        <image src="https://ftp.bmp.ovh/imgs/2021/05/860384e38aa0784e.png" />
+        <!-- 地点  -->
+        <view class="word">地点：{{item.location}}</view>
+      </view>
+      <view class="recorder">
+        <image src="https://ftp.bmp.ovh/imgs/2021/05/f24bfb09bdcdedd7.png" />
+        <!-- 时间  -->
+        <view class="word">时间：{{item.time_found}}</view>
+      </view>
+      <!-- 详情跳转按钮 -->
+      <navigator url="../Find_detail/Find_detail?id={{item._id}}">
+        <view class="detail">详情></view>
+      </navigator>
+    </view>
+  </van-transition>
+</view>

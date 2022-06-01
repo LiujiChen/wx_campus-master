@@ -1,0 +1,47 @@
+<view class="page-body">
+  <!-- <van-toast id="van-toast" /> -->
+  <view class="nav">
+    <image src="../../icons/comments.png" />校园论坛
+  </view>
+  <view class="discuss">讨论</view>
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    shape="round"
+    background="#fff"
+    bind:change="onChange"
+    bind:clear="onClear"
+    use-action-slot
+    clearable
+  >
+    <!-- <button slot="action" bind:tap="onSearch" round="{{true}}">搜索</button> -->
+    <van-button slot="action" bind:click="onSearch" color="#68CCC5" round="{{true}}" size="small">搜索</van-button>
+  </van-search>
+  <view class="select-box">
+    <view
+      class="select-item"
+      style="{{orderByTime?'background-color:#68CCC5;':''}}"
+      bindtap="sortByTime"
+    >最新</view>
+    <view
+      class="select-item"
+      style="{{orderByValue?'background-color:#68CCC5;':''}}"
+      bindtap="sortByValue"
+    >热门</view>
+  </view>
+  <van-empty wx:if="{{list.length == 0}}" description="什么也没找到T^T" image="search" />
+  <view wx:for="{{list}}">
+    <navigator url="../Forum_detail/Forum_detail?id={{item._id}}">
+    <view class="box" >
+      <view class="title">{{item.title}}</view>
+      <image wx:if="{{index < 3 && orderByValue}}" class="hot" src="https://ftp.bmp.ovh/imgs/2021/05/1eaec473176d4903.png"></image>
+      <view class="label">{{item.tag}}</view>
+      <image class="img" src="{{item.user_image}}">
+      </image>
+      <view class="name">{{item.user_name}}</view>
+      <view class="tim">{{item.time_publish_string}}</view> 
+    
+  </view>
+</navigator> 
+</view>
+</view>

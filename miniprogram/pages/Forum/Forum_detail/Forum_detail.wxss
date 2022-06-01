@@ -1,0 +1,202 @@
+/* pages/Forum/Forum_detail/Forum_detail.wxss */
+/* 富文本编辑 */
+
+/*评论区样式*/
+.box {
+  width: 100%;
+  height: 220rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.container {
+    position: absolute;
+    top: 250rpx;
+    left: 0;
+    width: 100%;
+    margin-bottom: 200rpx;
+    /* height: 100%; */
+
+}
+
+.ql-container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 1000rpx;
+    height: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow: auto;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #ECECEC;
+}
+
+.container .img {
+    width: 33.3%;
+    height: 80rpx;
+    margin: 50rpx 0;
+    /* display: inline-block; */
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .img image {
+    width: 50rpx;
+    height: 50rpx;
+    /* margin: 0 20rpx;*/
+    /* display: flex; */
+    /* align-self: flex-start; */
+}
+
+.container .img .font {
+    /* position: absolute;
+      top: 0; */
+    font: 400 40rpx "黑体";
+    margin-left: 40rpx;
+    align-self: center;
+    /* display: inline-block; */
+}
+
+page {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.page-body {
+    width: 700rpx;
+    /* height: 100%; */
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav {
+    width: 100%;
+    height: 100rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.userImg {
+    height: 70rpx;
+    width: 70rpx;
+    border-radius: 50%;
+    margin: 15rpx 15rpx;
+    overflow: hidden;
+    float: left;
+}
+
+.userName {
+    height: 70rpx;
+    width: 300rpx;
+    font: 400 30rpx "黑体";
+    margin: 15rpx 15rpx;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 70rpx;
+    display: inline-block;
+}
+
+.tim {
+    position: absolute;
+    top: 60rpx;
+    left: 520rpx;
+    width: 200rpx;
+    font: 400 25rpx "黑体";
+    color: rgb(163, 178, 184);
+}
+
+.title {
+    width: 500rpx;
+    margin: 0 20rpx;
+    font: 700 40rpx "黑体";
+    /* line-height: 60rpx; */
+}
+
+.transition {
+    width: 30rpx;
+    height: 30rpx;
+    font: 400 20rpx "黑体";
+    color: rgb(18, 150, 219);
+    background-color: black;
+}
+
+.write-box {
+    width: 100%;
+    position: fixed; 
+    bottom: 0;
+    background-color: white;
+    border-top: 1rpx solid rgba(0, 0, 0, 0.1);
+}
+
+.wirte-box .input {
+    border: 1rpx solid black !important;
+    /* border-bottom: 1rpx solid rgba(0, 0, 0, 0.1) !important; */
+}
+
+/* 评论区的一条评论 */
+.comment {
+    width: 100%;
+    padding-top: 20rpx;
+    position: relative;
+}
+
+.comment .com_userImg {
+    width: 60rpx;
+    height: 60rpx;
+    margin: 10rpx 10rpx;
+    border-radius: 50%;
+    float: left;
+    overflow: hidden;
+}
+
+.comment .com_userName {
+    width: 300rpx;
+    font: 400 30rpx "黑体";
+    color: rgba(0, 0, 0, 0.5);
+    margin-left: 30rpx;
+    line-height: 40rpx;
+    display: inline-block;
+}
+
+.comment .com_tim {
+    width: 400rpx;
+    font: 400 25rpx "黑体";
+    line-height: 40rpx;
+    margin-left: 30rpx;
+    color: rgb(163, 178, 184);
+    display: inline-block;
+}
+
+.comment .com_likeImg {
+    position: absolute;
+    left: 85%;
+    top: 20rpx;
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.comment .com_likeNum {
+    position: absolute;
+    left: 93%;
+    top: 25rpx;
+    width: 100rpx;
+    font: 400 25rpx "黑体";
+    line-height: 35rpx;
+}
+
+.comment .com_font {
+    width: 650rpx;
+    min-height: 150rpx;
+    font: 400 30rpx "黑体";
+    line-height: 50rpx;
+    margin: 10rpx auto;
+}
+
+
+
+

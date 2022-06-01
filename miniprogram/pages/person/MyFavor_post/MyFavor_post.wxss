@@ -1,0 +1,228 @@
+/* pages/MyFavor_post/MyFavor_post.wxss */
+page {
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+}
+
+.page-body {
+    height: 100%;
+    position: relative;
+}
+
+/* 侧边导航 */
+.sidebar {
+    width: 100rpx !important;
+    height: 500rpx !important;
+    position: absolute;
+    top:178rpx;
+    /* border-left: 1rpx solid black !important; */
+}
+
+.sidebar-item-active {
+    border-left-color:#68CCC5 !important;
+}
+
+.sidebar-item-unactive {
+    border-left-color: rgb(247, 248, 250) !important;
+}
+
+.nav {
+    width: 100%;
+    height: 80rpx;
+    font: 700 40rpx "黑体";
+    line-height: 70rpx;
+    padding-top: 15rpx;
+    /* margin-bottom: 20rpx; */
+}
+
+.nav .left-box {
+    width: 15rpx;
+    height: 50rpx;
+    margin: 10rpx 15rpx;
+    border-radius: 25%;
+    background-color:#68CCC5;
+    float: left;
+}
+
+.nav image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 15rpx;
+    margin-top: 25rpx;
+    display: inline-block;
+}
+
+.big-box {
+    position: absolute;
+    left: 100rpx;
+    top: 178rpx;
+    width: 650rpx;
+    /* height: 1300rpx; */
+    padding-bottom: 20rpx;
+    background-color: white;
+}
+
+.container {
+    width: 650rpx;
+    height: 370rpx;
+    margin-left: 100rpx;
+    background-color: white;
+    /* padding-bottom: 20rpx; */
+    float: left;
+    /* border-bottom: 1rpx solid rgba(0,0,0,0.2); */
+}
+
+.inf {
+    width: 100%;
+    height: 300rpx;
+}
+
+
+.container .tab {
+    width: 310rpx;
+    height: 70rpx;
+    text-align: center;
+    font: 400 30rpx "黑体";
+    line-height: 70rpx;
+    display: inline-block;
+}
+
+/* **************************失物招领样式********************************************** */
+.find_container {
+    height: 300rpx;
+    width: 100%;
+    background-color: white;
+    /* background:-webkit-linear-gradient(left,	#FFF5EE,pink); */
+    /* border-radius: 10rpx; */
+    overflow: hidden;
+    position: relative;
+    /* box-shadow: 3rpx 3rpx 3rpx 3rpx rgba(0, 0, 0, 0.3); */
+}
+
+/* 已领取 */
+.find_container .recieved {
+    position: absolute;
+    width: 110rpx;
+    height: 110rpx;
+}
+
+/* 存放的描述图片 */
+.find_container .image {
+    height: 240rpx;
+    width: 180rpx;
+    background-color: white;
+    margin: 30rpx 0;
+    margin-left: 50rpx;
+    margin-right: 10rpx;
+    border-radius: 20rpx;
+    float: left;
+}
+
+/* 说明的一行 */
+.find_container .recorder {
+    height: 50rpx;
+    width: 390rpx;
+    margin: 25rpx 10rpx;
+    float: left;
+}
+
+/* 说明一行的左边小图标 */
+.find_container .recorder image {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 10rpx 5rpx;
+    margin-top: 20rpx;
+    float: left;
+}
+
+/* 说明的文字 */
+.find_container .recorder .word {
+    height: 50rpx;
+    width: 330rpx;
+    margin: 10rpx 0;
+    margin-left: 10rpx;
+    font: 700 27rpx "黑体";
+    line-height: 50rpx;
+    display: inline-block;
+}
+
+/* **************************失物招领样式********************************************** */
+
+/* **************************校园论坛样式********************************************** */
+
+.forum_container {
+    width: 100%;
+    height: 300rpx;
+    background-color: #fff;
+    /* border-bottom: 1rpx solid rgba(0, 0, 0, 0.1); */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .forum_container .img {
+    height: 60rpx;
+    width: 60rpx;
+    border-radius: 50%;
+    margin: 20rpx 50rpx;
+    margin-right: 30rpx;
+    overflow: hidden;
+    float: left;
+  }
+  
+  .forum_container .title {
+    width: 600rpx;
+    height: 80rpx;
+    margin: 20rpx 50rpx;
+    font: 700 45rpx "黑体";
+    line-height: 80rpx;
+    white-space: nowrap;
+    /* 不换行 */
+    overflow: hidden;
+    /* 超出隐藏 */
+    text-overflow: ellipsis;
+    /* 超出部分显示省略号 */
+  }
+  
+  .forum_container .label {
+    width: 450rpx;
+    height: 70rpx;
+    margin: 0rpx 50rpx;
+    line-height: 70rpx;
+    font: 400 35rpx "黑体";
+    color: grey;
+    white-space: nowrap;
+    /* 不换行 */
+    overflow: hidden;
+    /* 超出隐藏 */
+    text-overflow: ellipsis;
+    /* 超出部分显示省略号 */
+  }
+  
+  .forum_container .tim {
+    position: absolute;
+    left: 420rpx;
+    top: 225rpx;
+    width: 200rpx;
+    font: 400 27rpx "黑体";
+    color: rgb(163, 178, 184);
+  }
+
+  .forum_container .name {
+    width: 300rpx;
+    font: 400 30rpx "黑体";
+    margin-top: 20rpx;
+    color: rgba(0,0,0,0.5);
+    line-height: 60rpx;
+    float: left;    
+}
+
+
+  .tip {
+    font: 700 30rpx "黑体";
+    text-align: center;
+    line-height: 100rpx;
+  }

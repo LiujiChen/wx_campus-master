@@ -1,0 +1,191 @@
+/**index.wxss**/
+
+page {
+  height: 100%;
+  background: rgb(248, 248, 248);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+
+}
+
+.page-body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.topNav {
+  width: 100%;
+  height: 270rpx;
+  background-color:rgba(104, 204, 197,0.5);
+  /* box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2); */
+  border-radius:0 0 12% 12%;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-align: center;
+}
+
+.topNav .name {
+  width: 250rpx;
+  height: 100rpx;
+  color: white;
+  font: 400 60rpx "黑体";
+  height: 100rpx;
+  margin: 85rpx 80rpx;
+  float: left;
+}
+
+.topNav .pic {
+  width: 200rpx;
+  height:  200rpx;
+  margin: 35rpx auto;
+  border-radius: 50%;
+  /* background-color: black; */
+  overflow: hidden;
+}
+
+swiper {
+  width: 100%;
+  height: 250rpx;
+  margin-bottom: 5rpx;
+}
+
+.swiper-box {
+  height: 100%;
+  width: 550rpx;
+  margin: 0 auto;
+  border-radius: 60rpx;
+  background-color: #F0FFF0;
+}
+
+.container-box {
+  width: 650rpx;
+  /* height: 600rpx; */
+  overflow: hidden;
+  margin: 10rpx auto;
+  /* box-shadow: 4 rpx 4rpx 5rpx #888888; */
+  background-color: transparent;
+
+}
+
+.container-box .nav {
+  width: 100%;
+  height: 70rpx;
+  font: 400 40rpx "黑体";
+  line-height: 70rpx;
+}
+
+.container-box .left-box {
+  width: 15rpx;
+  height: 50rpx;
+  margin: 10rpx 0;
+  margin-right: 15rpx;
+  border-radius: 25%;
+  background-color: 	#68CCC5;
+  float: left;
+}
+
+.container-box .little_box {
+  width: 50%;
+  height: 250rpx;
+  float: left;
+  position: relative;
+}
+
+.container-box .little_box .out_item {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx auto;
+  border: 1rpx solid #556B2F;
+  border-radius: 40%;
+  text-align: center;
+}
+
+.container-box .little_box .out_item image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 25rpx auto;
+}
+
+.container-box .little_box .in_item {
+  position: absolute;
+  left: 95rpx;
+  top: 30rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.3);
+  border-radius: 40%;
+}
+
+.container-box .little_box .font {
+  width: 100%;
+  margin: 0 auto;
+  font: 400 30rpx "黑体";
+  line-height: 60rpx;
+  text-align: center;
+}
+/* 最后的样式改动 */
+
+.TabBar{
+  width:100%;
+  height: 200rpx;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+
+.TabBar .LineBox{
+  width:110%;
+  height: 400rpx;
+  position: absolute;
+  left: -5%;
+  
+  bottom: -250rpx;
+  /* background-color: black; */
+  border-radius: 200% 200% 0 0;  
+  /* border-radius: 50%; */
+  border-top: 1rpx solid 	#556B2F;
+  background-color: 	#F0FFF0;
+  z-index: -1;  
+}
+
+.iconImage{
+  width:100rpx;
+  height: 100rpx;
+  position: absolute;
+}
+
+.noticeBlock{
+  width: 650rpx;
+  
+  overflow: hidden;
+  margin: 10rpx auto;
+  /* box-shadow: 4 rpx 4rpx 5rpx #888888; */
+  background-color: transparent;
+}
+
+.noticeBlock .nav {
+  width: 100%;
+  height: 70rpx;
+  font: 400 40rpx "黑体";
+  line-height: 70rpx;
+}
+
+.noticeBlock .left-box {
+  width: 15rpx;
+  height: 50rpx;
+  margin: 10rpx 0;
+  margin-right: 15rpx;
+  border-radius: 25%;
+  background-color: 	#68CCC5;
+  float: left;
+}
+
+.rec {
+  border-style: none !important;
+}
+

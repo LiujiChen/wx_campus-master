@@ -1,0 +1,213 @@
+/* miniprogram/pages/Deal/Deal_detail/Deal_detail.wxss */
+/* pages/detail/detail.wxss */
+page {
+  height: 100%;
+  background: rgb(248, 248, 248);
+  /* display: flex;
+  flex-direction: row;
+  justify-content: flex-start; */
+  color: black;
+}
+
+.page-body {
+  padding-top: 10rpx;
+  height: 100%;
+  width: 100%;
+}
+
+
+.hide {
+  display: none;
+}
+
+.nav {
+  width: 100%;
+  height: 560rpx;
+  text-align: center;
+}
+
+.img {
+  width: 420rpx;
+  height: 560rpx;
+  border-radius: 20rpx;
+  /* box-shadow: 5rpx 5rpx 5rpx 5rpx rgba(0, 0, 0, 0.3); */
+}
+
+.recorder {
+  width: 550rpx;
+  margin: 40rpx auto;
+  border-radius: 10rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* box-shadow: 2rpx 2rpx 2rpx 2rpx rgba(0, 0, 0, 0.1); */
+  font: 400 30rpx "黑体";
+  line-height: 50rpx;
+}
+
+/* 每条记录左边的小图标 */
+.recorder image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 15rpx 10rpx;
+  float: left;
+}
+
+.recorder .font {
+  margin-left: 10rpx;
+}
+
+/* .recorder .font {
+  position: absolute;
+  left: 50rpx;
+  width: 500rpx;
+  margin-left: 10rpx;
+  font: 400 30rpx "黑体";
+  line-height: 50rpx;
+}
+
+.recorder .bigfont {
+  position: absolute;
+  left: 60rpx;
+  font: 400 30rpx "黑体";
+  line-height: 50rpx;
+  display: inline-block;
+}*/
+
+/* 按钮 */
+.btn {
+  background-color: rgb(116, 104, 190);
+  width: 525rpx;
+  height: 80rpx;
+  margin: 120rpx auto;
+  border-radius: 35rpx;
+  text-align: center;
+  font: 400 30rpx "黑体";
+  line-height: 80rpx;
+  color: white;
+  /* box-shadow: 2rpx 2rpx 2rpx 2rpx rgba(0, 0, 0, 0.3); */
+}
+
+.tip {
+  font: 700 30rpx "黑体";
+  text-align: center;
+  line-height: 100rpx;
+}
+
+swiper {
+  width: 100%;
+  height: 722rpx;
+  margin-bottom: 50rpx;
+}
+
+.swiper-box {
+  height: 660rpx;
+  width: 550rpx;
+  margin: 0 auto;
+  border-radius: 60rpx;
+  background-color: white;
+}
+
+.swiper-box image {
+  height: 660rpx;
+  width: 550rpx;
+  margin: 0 auto;
+  border-radius: 60rpx;
+  background-color: rgb(244, 244, 244);
+}
+
+.container {
+  height: 200rpx;
+  width: 720rpx;
+  margin: 10rpx 15rpx;
+  border-radius: 10rpx;
+  background-color: white;
+}
+
+.container image {
+  height: 50rpx;
+  width: 50rpx;
+  margin: 0 10rpx;
+  margin-top: 27rpx;
+  float: left;
+}
+
+.container .favorite {
+  height: 90rpx;
+  width: 50rpx;
+  /* margin-top:10rpx; */
+  float: right;
+}
+
+.container .favorite image {
+  height: 50rpx;
+  width: 50rpx;
+  float: right;
+}
+
+.font {
+  height: 90rpx;
+  width: 200rpx;
+  color: rgb(255, 0, 54);
+  font: 200 70rpx "黑体";
+  line-height: 90rpx;
+  display: inline-block;
+}
+
+.title {
+  height: 90rpx;
+  width: 700rpx;
+  color: black;
+  font: 700 30rpx "黑体";
+  margin-left: 20rpx;
+  /* white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 超出部分显示省略号 */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 20px;
+  max-height: 100px;
+}
+
+.containerPro {
+  width: 720rpx;
+  margin: 10rpx 15rpx;
+  border-bottom: 50rpx;
+  border-radius: 10rpx;
+  background-color: white;
+  
+}
+
+
+
+.containerPro .recorder {
+  /* height: 70rpx; */
+  width: 700rpx;
+  /* overflow: hidden; */
+}
+
+.containerPro .recorder .box-title {
+  width: 200rpx;
+  height: 40rpx;
+  color: grey;
+  font: 700 30rpx "黑体";
+  line-height: 40rpx;
+  margin: 15rpx 10rpx; 
+  float: left;
+}
+
+.containerPro .recorder .box-detail {
+  /* height: 40rpx; */
+  width: 280rpx;
+  color: black;
+  font: 700 30rpx "黑体";
+  line-height: 40rpx;
+  line-height: 40rpx;
+  margin: 15rpx 15rpx;
+  display: inline-block;
+}
+
+.value{
+  color:rgba(0,0,0,0.7) !important;
+}
+

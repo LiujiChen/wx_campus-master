@@ -1,0 +1,168 @@
+/* pages/LAF/Post_find/Post_find.wxss */
+/* pages/detail/detail.wxss */
+page {
+  height: 100%;
+  background: rgb(248, 248, 248);
+  color: black !important;
+}
+
+.page-body {
+  padding-top: 10rpx;
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  width: 100%;
+  height: 600rpx;
+}
+
+
+.tip-nav {
+  width: 100%;
+  height: 70rpx;
+  font: 700 40rpx "黑体";
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.tip-nav .left-box {
+  width: 15rpx;
+  height: 50rpx;
+  margin: 10rpx 15rpx;
+  border-radius: 25%;
+  background-color: #68CCC5;
+  float: left;
+}
+
+.cell {
+  color: rgba(0,0,0,0.8) !important;
+}
+
+.imgBox {
+  width: 420rpx;
+  height: 560rpx;
+  margin: 10rpx auto;
+  border-radius: 20rpx;
+  /* box-shadow: 5rpx 5rpx 5rpx 5rpx rgba(0, 0, 0, 0.3); */
+  background-color: white;
+  text-align: center;
+}
+
+
+
+.noImg {
+  width: 128rpx;
+  height: 128rpx;
+  margin-top: 216rpx;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.recorder {
+  width: 700rpx;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+  background-color: white;
+  /* box-shadow: 2rpx 2rpx 2rpx 2rpx rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
+  font: 400 36rpx "黑体";
+  line-height: 60rpx;
+  position: relative;
+}
+
+/* 下拉菜单记录条 */
+.menuRecorder {
+  width: 600rpx;
+  margin: 4rpx auto;
+  font: 400 30rpx "黑体";
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.recorder .rightImage {
+  position: absolute;
+  left: 625rpx;
+  top: 10rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+/* 每条记录左边的小图标 */
+.recorder image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 10rpx 10rpx;
+  float: left;
+}
+
+.recorder .font {
+  margin-left: 50rpx;
+}
+
+.recorder .radioBox {
+  width: 500rpx;
+  margin-left: 50rpx;
+}
+
+.radioFont {
+  color: rgba(0, 0, 0, 0.5) !important;
+  font: 700 30rpx "楷体";
+}
+
+.recorder .text {
+  width: 20%;
+  text-align: center;
+  display: inline-block;
+}
+
+.recorder input[type=text] {
+  width: 620rpx;
+  margin-left: 50rpx;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.3);
+  border-bottom-width: 3rpx;
+  word-wrap: break-word;
+}
+
+
+
+/* .recorder .font {
+  position: absolute;
+  left: 50rpx;
+  width: 500rpx;
+  margin-left: 10rpx;
+  font: 400 30rpx "黑体";
+  line-height: 50rpx;
+}
+
+.recorder .bigfont {
+  position: absolute;
+  left: 60rpx;
+  font: 400 30rpx "黑体";
+  line-height: 50rpx;
+  display: inline-block;
+}*/
+
+/* 按钮 */
+.btn {
+  background-color: #68CCC5;
+  width: 525rpx;
+  height: 80rpx;
+  margin: 50rpx auto;
+  border-radius: 10rpx;
+  text-align: center;
+  font: 400 30rpx "黑体";
+  line-height: 80rpx;
+  color: white;
+  /* box-shadow: 2rpx 2rpx 2rpx 2rpx rgba(0, 0, 0, 0.3); */
+}
+
+.tip {
+  font: 700 30rpx "黑体";
+  text-align: center;
+  line-height: 100rpx;
+}

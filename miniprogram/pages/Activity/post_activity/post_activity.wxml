@@ -1,0 +1,151 @@
+<!--pages/Activity/post_activity/post_activity.wxml-->
+<view class="page-body">
+  <view class="nav">
+    <view class="left-box"></view>请为活动添加描述图片或海报：
+  </view>
+  <view class="uploadImage">
+    <view class="previewImageBox" wx:for="{{image_list}}">
+      <image class="image" src="{{item}}" />
+      <image class="delete" bindtap="deleteImage" data-index="{{index}}" />
+    </view>
+
+    <view class="previewImageBox" bindtap="addImage">
+      <view class="image">
+        <image class="add" src="https://i.loli.net/2021/05/11/XatEG2gbmcHZuxw.png" />
+      </view>
+    </view>
+  </view>
+
+  <view class="nav">
+    <view class="left-box"></view>请完善活动信息：
+  </view>
+
+  <view class="informationBlock">
+    <vant-cell-group>
+      <van-field
+        required
+        clearable
+        label="活动名称"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/9d2755daf033d01a.png"
+        placeholder="这个活动的名字"
+        bind:blur="submitTitle"
+      />
+      <van-cell
+        required
+        value="{{currtype}}"
+        title="活动类型"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/378a02054b4bf607.png"
+        bindtap="showTypeSelect"
+        is-link
+      />
+      <van-action-sheet
+        show="{{ type_show }}"
+        actions="{{ type_list }}"
+        bind:select="selectType"
+        bind:close="closeTypeSelect"
+        cancel-text="取消"
+        bind:cancel="closeTypeSelect"
+      />
+
+      <van-cell
+        value="{{curr_in_campus}}"
+        title="是否校内"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/3baee5153f8178ce.png"
+        bindtap="showCampusSelect"
+        is-link
+      />
+      <van-action-sheet
+        show="{{ in_campus_show }}"
+        actions="{{ in_campus_list }}"
+        bind:select="selectCampus"
+        bind:close="closeCampusSelect"
+        cancel-text="取消"
+        bind:cancel="closeCampusSelect"
+      />
+      <van-cell
+        value="{{ username }}"
+        clearable
+        title="招募人数"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/19a4f6b3d67d5ad4.png"
+      >
+        <van-stepper value="{{ 0 }}" min="1" integer bind:change="onChangeStepper" />
+      </van-cell>
+
+      <van-cell
+        required
+        value="{{currentDateString}}"
+        clearable
+        title="活动报名截止时间"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/f24bfb09bdcdedd7.png"
+        bindtap="showTimeSelect"
+        is-link
+      ></van-cell>
+
+      <van-field
+        required
+        clearable
+        label="活动地点"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/95f21aeedaab8d47.png"
+        placeholder="比如：U城"
+        bind:blur="submitLocation"
+      />
+
+      <van-field
+        clearable
+        label="行程安排"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/1108ceb06511d4dd.png"
+        placeholder="比如：巴士直达或步行"
+        type="textarea"
+        bind:blur="submitTraffic"
+      />
+
+      <van-field
+        required
+        clearable
+        label="负责人联系方式"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/ff0a05a76c4bf4ac.png"
+        placeholder="比如：电话：19160048225"
+        type="textarea"
+        bind:blur="submitContact"
+      />
+
+      <van-field
+        clearable
+        autosize
+        label="活动详情"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/e0d11f4178e9db7e.png"
+        placeholder="比如：人员要求，活动具体内容"
+        type="textarea"
+        bind:blur="submitDetail"
+      />
+    </vant-cell-group>
+
+    <view class="Button" bindtap="submitAll">提交活动招募</view>
+
+    <van-popup
+      show="{{time_show}}"
+      position="bottom"
+      round
+      custom-style="height: 40%; padding-top:20rpx !important;"
+      bind:close="onTimeClose"
+    >
+      <!-- <view class="text">年</view>
+        <view class="text">月</view>
+        <view class="text">日</view>
+        <view class="text">时</view>
+      <view class="text">分</view>-->
+      <!-- <view class="recorder"> -->
+      <van-datetime-picker
+        type="datetime"
+        value="{{ currentDate }}"
+        min-date="{{ minDate }}"
+        
+        bind:confirm="onInput"
+        bind:cancel="onTimeClose"
+        item-height="30"
+        title="选择时间"
+      />
+      <!-- </view> -->
+    </van-popup>
+  </view>
+</view>

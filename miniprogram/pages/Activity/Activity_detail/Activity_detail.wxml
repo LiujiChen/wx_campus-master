@@ -1,0 +1,65 @@
+<!--pages/Activity/Activity_detail/Activity_detail.wxml-->
+<view class="page-body">
+  <!-- 轮播图 -->
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{item_act.picture}}">
+      <view class="swiper-box">
+        <image src="{{item}}" bindtap="preview_picture" data-src="{{item}}" />
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <view class="informationBlock">
+    <van-cell
+      value="{{item_act.title}}"
+      title="活动名字"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/49e8b2ce4179f3fd.png"
+    />
+    <van-cell
+      value="{{item_act.type}}"
+      title="活动类型"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/378a02054b4bf607.png"
+    />
+    <van-cell
+      value="{{item_act.in_campus}}"
+      title="是否校内"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/3baee5153f8178ce.png"
+    />
+    <van-cell
+      value="{{item_act.people_num}}"
+      title="招募人数"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/19a4f6b3d67d5ad4.png"
+    />
+    <van-cell
+      value="{{item_act.time}}"
+      title="活动报名截止时间"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/f24bfb09bdcdedd7.png"
+    />
+    <van-cell
+      value="{{item_act.type}}"
+      title="活动类型"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/49e8b2ce4179f3fd.png"
+    />
+    <van-cell
+      value="{{item_act.location}}"
+      title="活动地点"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/95f21aeedaab8d47.png"
+    />
+    <van-cell
+      value="{{item_act.traffic}}"
+      title="行程安排"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/1108ceb06511d4dd.png"
+    />
+    <van-cell
+      value="{{item_act.contact}}"
+      title="负责人联系方式"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/ff0a05a76c4bf4ac.png"
+    />
+    <van-cell
+      autosize
+      value="{{item_act.detail}}"
+      title="活动详情"
+      icon="https://ftp.bmp.ovh/imgs/2021/05/e0d11f4178e9db7e.png"
+    />
+  </view>
+</view>

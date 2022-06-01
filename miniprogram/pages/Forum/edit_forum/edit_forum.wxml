@@ -1,0 +1,117 @@
+<!-- <view class="page-body">
+    <view class="nav"><view class="left-box"></view>发布帖子</view>
+    <view class="title-box">
+        <van-field
+            value="{{ message }}"
+            label="标题"
+            type="textarea"
+            placeholder="请输入标题"
+            autosize
+            border="{{ false }}"
+            left-icon="https://i.loli.net/2021/05/13/Gjh1Xlop38JIAg4.png" 
+            model:value="{{title_val}}"
+        />
+    </view>
+    <view class="title-box">
+        <van-field
+            value="{{ message }}"
+            label="标签"
+            type="textarea"
+            placeholder="请输入标签"
+            autosize
+            border="{{ false }}"
+            left-icon="https://i.loli.net/2021/05/13/gxlwyRaXFm6tc79.png"  
+            model:value="{{tag_val}}"
+        />
+    </view>
+    <view class="textarea"> -->
+<!-- <textarea placeholder="请输入正文"></textarea> -->
+<!-- <van-field
+            type="textarea"
+            placeholder="请输入正文"
+            autosize="{{ {maxHeight: 470} }}"
+            border="{{ false }}"
+            model:value="{{text_val}}"
+        /> -->
+<!-- </view> -->
+
+<!-- <view class="btn" bindtap="onInsert">发送</view> -->
+
+<!-- </view> -->
+
+<view class="page-body">
+  <view class="nav">
+    <view class="left-box"></view>编辑帖子
+  </view>
+  <view class="title-box">
+    <van-field
+      value="{{ title_val }}"
+      label="标题"
+      type="textarea"
+      placeholder="请输入标题"
+      autosize
+      border="{{ false }}"
+      left-icon="https://i.loli.net/2021/05/13/Gjh1Xlop38JIAg4.png"
+      model:value="{{title_val}}"
+    />
+  </view>
+  <view class="title-box">
+    <van-field
+      value="{{ tag_val }}"
+      label="标签"
+      type="textarea"
+      placeholder="请输入标签"
+      autosize
+      border="{{ false }}"
+      left-icon="https://i.loli.net/2021/05/13/gxlwyRaXFm6tc79.png"
+      model:value="{{tag_val}}"
+    />
+  </view>
+  <view class="textarea">
+    <view class="container">
+      <editor
+        id="editor"
+        class="ql-container"
+        placeholder="{{placeholder}}"
+        bindstatuschange="onStatusChange"
+        bindready="onEditorReady"
+      ></editor>
+      <button class="btn" bindtap="onTransmit">编辑并发布</button>
+    </view>
+    <view
+      class="toolbar"
+      catchtouchend="format"
+      hidden="{{keyboardHeight > 0 ? false : true}}"
+      style="bottom: {{isIOS ? keyboardHeight : 0}}px"
+    >
+      <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+      <i
+        class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}"
+        data-name="header"
+        data-value="{{2}}"
+      ></i>
+      <i
+        class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}"
+        data-name="header"
+        data-value="{{3}}"
+      ></i>
+      <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+      <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+      <i
+        class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}"
+        data-name="underline"
+      ></i>
+      <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+      <i
+        class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}"
+        data-name="list"
+        data-value="ordered"
+      ></i>
+      <i
+        class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}"
+        data-name="list"
+        data-value="bullet"
+      ></i>
+    </view>
+  </view>
+</view>

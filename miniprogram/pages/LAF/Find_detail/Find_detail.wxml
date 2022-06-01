@@ -1,0 +1,55 @@
+<view class="page-body">
+  <!-- 图片 -->
+  <view class="nav">
+    <image
+      class="img"
+      src="{{item_record.picture}}"
+      data-src="{{item_record.picture}}"
+      bindtap="preview_picture"
+    />
+  </view>
+  <view class="detail-box">
+    <!-- 找到地点： -->
+    <view class="recorder" style="margin-top: 40rpx;">
+      <image src="https://ftp.bmp.ovh/imgs/2021/05/860384e38aa0784e.png" />
+      <view class="font">找到地点：{{item_record.location}}</view>
+    </view>
+
+    <!-- 放置地点： -->
+    <view class="recorder">
+      <image src="https://ftp.bmp.ovh/imgs/2021/05/5f58f90f89cd8c88.png" />
+      <view class="font">放置地点：{{item_record.reserve_loc}}</view>
+    </view>
+<!-- 所属类别： -->
+<view class="recorder">
+  <image src="https://ftp.bmp.ovh/imgs/2021/05/49e8b2ce4179f3fd.png" />
+  <view class="font">所属类别：{{item_record.type}}</view>
+</view>
+<!-- 时间： -->
+<view class="recorder">
+  <image src="https://ftp.bmp.ovh/imgs/2021/05/f24bfb09bdcdedd7.png" />
+  <view class="font">时间：{{item_record.time_found}}</view>
+</view>
+<!-- 联系方式： -->
+<view class="recorder">
+  <image src="https://ftp.bmp.ovh/imgs/2021/05/ff0a05a76c4bf4ac.png" />
+  <view class="font">联系方式：{{item_record.contact}}</view>
+</view>
+<!-- 描述： -->
+<view class="recorder">
+  <image src="https://ftp.bmp.ovh/imgs/2021/05/e0d11f4178e9db7e.png" />
+  <view class="font">描述：{{item_record.detail}}</view>
+</view>
+</view>
+
+
+<!-- 我要领取 -->
+<!-- <view wx:if="{{!item_record.is_found}}" class="btn" bindtap="get">我要领取</view> -->
+<view class="{{item_record.is_found?'hide':'btn'}}" bindtap="get">我要领取</view>
+<van-dialog use-slot title="提示" show="{{ flag }}" show-cancel-button confirm-button-open-type="getUserInfo"
+    bind:close="onClose" bind:getuserinfo="getUserInfo" bind:confirm="onConfirm">
+    <view class="tip">请确认是您的遗失物品</view>
+</van-dialog>
+
+</view>
+

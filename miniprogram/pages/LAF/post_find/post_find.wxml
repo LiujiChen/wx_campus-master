@@ -1,0 +1,224 @@
+<view class="page-body">
+  <!-- 上传图片 -->
+  <view class="tip-nav">
+    <view class="left-box"></view>请为物品添加描述图片：
+  </view>
+  <view class="nav" bindtap="doUpload">
+    <view class="imgBox">
+      <image class="{{is_set_picture?'img':'noImg'}}" src="{{picture_url}}" />
+    </view>
+  </view>
+
+  <view class="tip-nav">
+    <view class="left-box"></view>请完善物品信息：
+  </view>
+  <view class="container">
+    <vant-cell-group>
+      
+      <van-cell
+        required
+        value="{{findPlace}}"
+        title="选择地点"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/860384e38aa0784e.png"
+        bind:click="showPlacePopup"
+        is-link
+        arrow-direction="down"
+        value-class="cell"
+        size="large"
+      />
+      <van-field
+        required
+        clearable
+        label="放置地点"
+        value="{{reserve_loc_value}}"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/860384e38aa0784e.png"
+        input-align="right"
+        placeholder="例如一食堂南厅"
+        bind:onChange="reserveInput"
+        size="large"
+      />
+      <van-cell
+        required
+        value="{{category_value}}"
+        title="所属类别"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/49e8b2ce4179f3fd.png"
+        bind:click="showCategoryPopup"
+        is-link
+        arrow-direction="down"
+        value-class="cell"
+        size="large"
+      />
+      <van-cell
+        required
+        value="{{currentDateString}}"
+        title="时间"
+        icon="https://ftp.bmp.ovh/imgs/2021/05/f24bfb09bdcdedd7.png"
+        bind:click="showTimePopup"
+        is-link
+        arrow-direction="down"
+        value-class="cell"
+        size="large"
+      />
+      <van-field
+        required
+        clearable
+        label="联系方式"
+        value="{{contact_value}}"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/ff0a05a76c4bf4ac.png"
+        input-align="right"
+        placeholder="例如: qq:xxxx wx:xxxx"
+        bind:onChange="contactInput"
+        size="large"
+      />
+      <van-field
+        required
+        clearable
+        label="描述"
+        value="{{detail_value}}"
+        left-icon="https://ftp.bmp.ovh/imgs/2021/05/e0d11f4178e9db7e.png"
+        input-align="right"
+        placeholder="例如:第二排第四列的桌子上"
+        bind:onChange="detailInput"
+        size="large"
+      />
+    </vant-cell-group>
+    <!-- 找到地点 -->
+  <!-- <view class="recorder" style="color:{{findPlaceColor}};">
+    <image src="https://ftp.bmp.ovh/imgs/2021/05/860384e38aa0784e.png" />
+    <view class="font" bindtap="showPlacePopup">
+      找到地点：{{findPlace}}
+      <van-icon name="arrow-down" custom-class="rightImage" />
+    </view>
+  </view> -->
+  <!-- @note show="{{ show_place }}" -->
+  <!-- <van-popup show="{{ show_place }}" 
+        position="bottom"
+        round
+        custom-style="height: 40%; padding-top:20rpx !important;"
+  bind:close="onPlaceClose">-->
+  <!-- @note wx:for="{{placeList}}" bindtap="selectPlace" -->
+  <!-- <view class="menuRecorder" wx:for="{{placeList}}" data-name="{{item}}" bindtap="selectPlace" >{{item}}</view>
+  </van-popup>-->
+
+  <van-action-sheet
+    show="{{ show_place }}"
+    actions="{{ placeList }}"
+    bind:close="onPlaceClose"
+    bind:select="selectPlace"
+    description="选择地点"
+    cancel-text="取消"
+    bind:cancel="onPlaceClose"
+  />
+
+  <!-- 放置地点： -->
+  <!-- <view class="recorder" style="color: {{setPlaceColor}};">
+    <image src="https://ftp.bmp.ovh/imgs/2021/05/5f58f90f89cd8c88.png" />
+    <view class="font">放置地点：</view> -->
+    <!-- <view class="radioBox">
+            <van-radio-group value="{{ radio_setPlace }}" bind:change="setPlace" direction="horizontal">
+                <van-radio wx:for="{{placeList}}" name="{{index}}" checked-color="{{setPlaceColor}}"
+                    label-class="radioFont" icon-size="30rpx">{{item}}</van-radio>
+            </van-radio-group>
+    </view>-->
+    <!-- <input type="text" placeholder="例如：一食堂南厅" bindinput="reserveInput" />
+  </view> -->
+
+  <!-- 所属类别 -->
+  <!-- <view class="recorder" style="color: {{categoryColor}};">
+    <image src="https://ftp.bmp.ovh/imgs/2021/05/49e8b2ce4179f3fd.png" />
+    <view class="font" bindtap="showCategoryPopup">
+      所属类别:{{category_value}} -->
+      <!-- <image class="rightImage" src="https://i.loli.net/2021/05/10/D18ltPL4jmoBOHV.png" class="rightImage"></image> -->
+      <!-- <van-icon name="arrow-down" custom-class="rightImage" />
+    </view> -->
+    <!-- <van-popup show="{{ show_category }}" 
+        position="bottom"
+        round
+        custom-style="height: 40%; padding-top:20rpx !important;"
+        bind:close="onCategoryClose">
+        <view class="menuRecorder" wx:for="{{categoryList}}" data-name="{{item}}" bindtap="selectCategory" >{{item}}</view>
+    </van-popup>-->
+    <!-- <view class="radioBox">
+            <van-radio-group value="{{  radio_category }}" bind:change="setCategory" direction="horizontal">
+                <van-radio wx:for="{{categoryList}}" name="{{index}}" checked-color="{{categoryColor}}"
+                    label-class="radioFont" icon-size="30rpx">{{item}}</van-radio>
+            </van-radio-group>
+    </view>-->
+    <van-action-sheet
+      show="{{ show_category }}"
+      actions="{{ categoryList }}"
+      bind:close="onCategoryClose"
+      bind:select="selectCategory"
+      description="选择类别"
+      cancel-text="取消"
+      bind:cancel="onCategoryClose"
+    />
+
+  <!-- 时间： -->
+  <!-- <view class="recorder" style="color: rgb(18, 150, 219);"> -->
+  <!-- <view class="recorder">
+    <image src="https://ftp.bmp.ovh/imgs/2021/05/f24bfb09bdcdedd7.png" />
+    <view class="font" bindtap="showTimePopup">
+      时间：{{currentDateString}}
+      <van-icon name="arrow-down" custom-class="rightImage" />
+    </view> -->
+
+    <van-popup
+      show="{{ show_time }}"
+      position="bottom"
+      round
+      custom-style="height: 35%; padding-top:20rpx !important;"
+      bind:close="onTimeClose"
+    >
+      <!-- <view class="text">年</view>
+        <view class="text">月</view>
+        <view class="text">日</view>
+        <view class="text">时</view>
+      <view class="text">分</view>-->
+      <!-- <view class="recorder"> -->
+      <van-datetime-picker
+        type="datetime"
+        value="{{ currentDate }}"
+        min-date="{{ minDate }}"
+        max-date="{{ maxDate }}"
+        bind:confirm="onInput"
+        item-height="30"
+        title="选择时间"
+      />
+      <!-- </view> -->
+    </van-popup>
+
+    <!-- <text>年</text><text>月</text><text>日</text><text>时</text><text>分</text> -->
+  <!-- </view> -->
+
+  <!-- 联系方式： -->
+  <!-- <view class="recorder" style="color: rgb(229, 117, 174);"> -->
+  <!-- <view class="recorder">
+    <image src="https://ftp.bmp.ovh/imgs/2021/05/ff0a05a76c4bf4ac.png" />
+    <view class="font">联系方式：</view>
+    <input type="text" placeholder="例如：qq：xxxx wx:xxxx" bindinput="contactInput" />
+  </view> -->
+
+  <!-- 描述： -->
+  <!-- <view class="recorder" style="color: rgba(8, 222, 125,0.7);"> -->
+  <!-- <view class="recorder">
+    <image src="https://ftp.bmp.ovh/imgs/2021/05/e0d11f4178e9db7e.png" />
+    <view class="font">描述：</view>
+    <input type="text" placeholder="例如：一教D1111 第二排第四列的桌子上" bindinput="detailInput"/>
+  </view> -->
+</view>
+
+  <view class="btn" bindtap="doInsert">发布</view>
+  <van-dialog
+    use-slot
+    title="提示"
+    show="{{ show_post_confirm }}"
+    show-cancel-button
+    confirm-button-open-type="getUserInfo"
+    bind:confirm="postConfirm"
+    bind:close="postCancel"
+    bind:getuserinfo="getUserInfo"
+  >
+    <view class="tip">确认要发布这条信息吗</view>
+  </van-dialog>
+</view>

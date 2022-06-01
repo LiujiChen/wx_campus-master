@@ -1,0 +1,120 @@
+<view class="page-body">
+  <van-transition name="fade-down" duration="1500">
+    <view class="nav">
+      <!-- 用户微信头像 -->
+      <!-- <image src="{{person.userAvatarUrl}}" /> -->
+      <image class="pic" src="{{person.userAvatarUrl}}" />
+      <!-- 昵称 -->
+      <view class="word" style="font: 1000 32rpx '黑体';">
+        <text>{{person.userNickName}}</text>
+      </view>
+    </view>
+  </van-transition>
+
+  <van-transition name="fade" duration="2000">
+    <view class="bigbox">
+      <view class="recorder" bindtap="showManageDialog">
+        <image class="image" src="../icons/setting.png"/>账号管理
+        <van-icon name="arrow" custom-class="rightImage"  />
+      </view>
+      <van-dialog
+        use-slot
+        title="修改您的头像或昵称"
+        show="{{ show_manage_dialog }}"
+        show-cancel-button
+        confirm-button-open-type="getUserInfo"
+        bind:confirm="submitAll"
+        bind:close="onClose"
+      >
+        <van-field
+          value="{{ nickname }}"
+          clearable
+          label="昵称"
+          left-icon="https://ftp.bmp.ovh/imgs/2021/05/f2a31ab6a0399bb3.png"
+          bind:blur="submitNickname"
+        />
+        <view style="width:300rpx; margin: 10rpx auto; text-align:center">点击图片修改头像</view>
+
+        <van-empty image="{{picture_url}}" bindtap="doUpload" />
+      </van-dialog>
+
+      <view class="recorder" bindtap="showContact">
+        <image class="image" src="../icons/online-meeting.png" />
+        联系我们
+        <van-icon name="arrow" custom-class="rightImage" />
+      </view>
+      <van-dialog
+        use-slot
+        title="#联系我们#"
+        show="{{ show_contact_dialog }}"
+        show-cancel-button
+        confirm-button-open-type="getUserInfo"
+        bind:confirm="closeContact"
+        bind:close="closeContact"
+      >
+      <!-- <van-empty
+        class="custom-icon"
+        description="加入QQ群向我们提出宝贵意见 QQ群号：884024232"
+      /> -->
+      <van-cell label="加入QQ群向我们提出宝贵意见,QQ群号:884024232" label-class="label"></van-cell>
+      <view style="text-align:center;" data-src="https://ftp.bmp.ovh/imgs/2021/05/e3e64ab495efba25.png"
+        bindtap="preview_picture">
+        <image style="height: 400rpx; width: 400rpx;" src="https://ftp.bmp.ovh/imgs/2021/05/e3e64ab495efba25.png"></image>
+      </view>
+      <!-- <van-empty
+        class="custom-image"
+        image="https://ftp.bmp.ovh/imgs/2021/05/e3e64ab495efba25.png"
+      /> -->
+      </van-dialog>
+      <view class="recorder">
+        <navigator url="./MyFavor_post/MyFavor_post">
+          <image class="image" src="../icons/fav.png" />收藏与发布
+          <van-icon name="arrow" custom-class="rightImage" />
+        </navigator>
+      </view>
+
+      <view class="recorder" bindtap="showMore">
+        <image class="image" src="../icons/info.png" />关于我们
+        <van-icon name="arrow" custom-class="rightImage" />
+      </view>
+      <van-dialog
+        use-slot
+        title="关于我们"
+        show="{{ show_more_dialog }}"
+        show-cancel-button
+        confirm-button-open-type="getUserInfo"
+        bind:confirm="closeMore"
+        bind:close="closeMore"
+      >
+      <van-empty
+        class="custom-image"
+        image="https://ftp.bmp.ovh/imgs/2021/05/af16c9fff9be3be9.png"
+        description="重大知鹦是由重庆大学软件学院小程序开发团队设计并开发的一款智慧校园小程序，小程序于2021-5-1开始设计，并于2021-5-23号发布上线版本，目前仍然在优化内容"
+      />
+    
+      </van-dialog>
+    </view>
+  </van-transition>
+</view>
+
+
+  <view class="TabBar">
+  <van-transition custom-class="block" name="fade" duration="1500">
+    <view class="LineBox"></view>
+
+    <image
+      class="iconImage"
+      src="{{inactive_index}}"
+      style="left:100rpx; top:30rpx"
+      bindtap="goIndex"
+    />
+
+    <image class="iconImage" src="{{inactive_post}}" style="left:330rpx; top:0" bindtap="goPost" />
+
+    <image
+      class="iconImage"
+      src="{{active_people}}"
+      style="right:100rpx; top:30rpx"
+    />
+  </van-transition>
+</view>

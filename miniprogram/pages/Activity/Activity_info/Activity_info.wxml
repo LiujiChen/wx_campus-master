@@ -1,0 +1,90 @@
+<view class="page-body">
+  <!-- 页面标题 -->
+  <view class="nav">
+    <image src="../../icons/mark.png" />校园活动招募与组织
+  </view>
+  <!-- 选择类型 -->
+  <view class="select">
+    <view class="box" bindtap="showType">
+      {{curr_type}}
+      <van-icon name="arrow-down" custom-class="image" />
+    </view>
+<!-- 选择时间 -->
+    <view class="box" bindtap="showTime">
+      {{curr_time}}
+      <van-icon name="arrow-down" custom-class="image" />
+    </view>
+    <!-- 选择是否在学校 -->
+    <view class="box" bindtap="showIn_campus">
+      {{curr_in_campus}}
+      <van-icon name="arrow-down" custom-class="image" />
+    </view>
+  </view>
+  <!-- 类型 -->
+  <van-action-sheet
+    show="{{ show_type }}"
+    actions="{{ type_list }}"
+    bind:select="selectType"
+    bind:close="closeType"
+    cancel-text="取消"
+    bind:cancel="closeType"
+  />
+  <!-- 时间 -->
+  <van-action-sheet
+    show="{{ show_time }}"
+    actions="{{ time_list }}"
+    bind:select="selectTime"
+    bind:close="closeTime"
+    cancel-text="取消"
+    bind:cancel="closeTime"
+  />
+  <!-- 是否校内 -->
+  <van-action-sheet
+    show="{{ show_in_campus }}"
+    actions="{{ in_campus_list }}"
+    bind:select="selectIn_campus"
+    bind:close="closeIn_campus"
+    cancel-text="取消"
+    bind:cancel="closeIn_campus"
+  />
+
+  <!-- 单个的实例 -->
+  <!-- <view class="activityCard" bindtap="goToDetail">
+    <image class="img" src="https://ftp.bmp.ovh/imgs/2021/05/294e6cf1d3a0f5f8.jpg" />
+    <view class="infoBox">
+      <view class="title">虎溪徒步一日游</view>
+      <view class="recorder">
+        <image class="icon" src="https://ftp.bmp.ovh/imgs/2021/05/f24bfb09bdcdedd7.png" />2021-5-31
+      </view>
+      <view class="recorder">
+        <image class="icon" src="https://ftp.bmp.ovh/imgs/2021/05/95f21aeedaab8d47.png" />白公馆
+      </view>
+      <view class="recorder">
+        <image class="icon" src="https://ftp.bmp.ovh/imgs/2021/05/19a4f6b3d67d5ad4.png" />10 个人
+      </view>
+    </view>
+  </view>-->
+
+  <view wx:for="{{item_list}}">
+    <navigator url="../Activity_detail/Activity_detail?id={{item._id}}">
+      <view class="activityCard">
+        <image class="img" src="{{item.picture[0]}}"/>
+        <view class="infoBox">
+          <view class="title">{{item.title}}</view>
+          <view class="recorder">
+            <image class="icon" src="https://ftp.bmp.ovh/imgs/2021/05/f24bfb09bdcdedd7.png" />
+            {{item.time}}
+          </view>
+          <view class="recorder">
+            <image class="icon" src="https://ftp.bmp.ovh/imgs/2021/05/95f21aeedaab8d47.png" />
+            {{item.location}}
+          </view>
+          <view class="recorder">
+            <image class="icon" src="https://ftp.bmp.ovh/imgs/2021/05/19a4f6b3d67d5ad4.png" />
+            {{item.people_num}}人
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

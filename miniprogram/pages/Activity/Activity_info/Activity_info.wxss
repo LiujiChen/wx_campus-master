@@ -1,0 +1,105 @@
+/* pages/Activity/Activity_info/Activity_info.wxss */
+page {
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: black;
+}
+
+.page-body {
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  width: 750rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: rgb(248, 248, 248);
+}
+
+.nav image {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 20rpx;
+  float: left;
+}
+
+.select {
+  width: 750rpx;
+  overflow: hidden;
+  border-bottom: 2rpx solid rgba(0,0,0,0.1);
+}
+
+.select .box {
+  width: 250rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+  /* border-right: 1rpx rgb(163, 178, 184) solid; */
+
+  font: 400 30rpx "黑体";
+  line-height: 70rpx;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+
+.image {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  position: absolute !important;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.activityCard{
+  width: 100%;
+  height:300rpx;
+}
+
+.activityCard .img{
+  width:276rpx;
+  height:276rpx;
+  margin-left:30rpx;
+  margin-top:12rpx;
+  margin-bottom: 12rpx;
+  border-radius:10rpx;
+  float:left;
+}
+
+.activityCard .infoBox{
+  width:400rpx;
+  height:276rpx;
+  margin: 20rpx 10rpx;
+  margin-left: 30rpx;
+  display: inline-block;
+}
+/* title的高度是80rpx */
+
+.activityCard .infoBox  .title{
+  width:320rpx;
+  height:80rpx;
+  font:400 40rpx "黑体";
+  /* float:left; */
+}
+
+.activityCard .infoBox .recorder{
+  width:320rpx;
+  height:40rpx;
+  margin-top:20rpx;
+  font:400 30rpx "黑体";
+  line-height: 40rpx;
+  position: relative;
+}
+
+.activityCard .infoBox .recorder .icon{
+  width:40rpx;
+  height:40rpx;
+  margin-right:20rpx;
+  float:left;
+}
+
+

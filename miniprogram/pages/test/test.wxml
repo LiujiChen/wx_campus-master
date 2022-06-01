@@ -1,0 +1,14 @@
+import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
+
+Dialog.alert({
+  title: '标题',
+  message: '弹窗内容',
+}).then(() => {
+  // on close
+});
+
+Dialog.alert({
+  message: '弹窗内容',
+}).then(() => {
+  // on close
+});
