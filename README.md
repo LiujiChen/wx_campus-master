@@ -12,23 +12,23 @@
 
 ![homepage.PNG](README.Background/homepage.png)
 
-![post.PNG](README.assets/post.png)
+![post.PNG](README.Background/post.png)
 
-![userInfo.PNG](README.assets/userInfo.png)
+![userInfo.PNG](README.Background/userInfo.png)
 
 小程序的设计细节如下：
 
-![首页.png](README.assets/首页.png)
+![首页.png](README.Background/首页.png)
 
-![发布.png](README.assets/发布.png)
+![发布.png](README.Background/发布.png)
 
-![我的页面.png](README.assets/我的页面.png)
+![我的页面.png](README.Background/我的页面.png)
 
 关于小程序的更多信息，如果你想了解，可以观看我们队发布在Bilibili上的预览片：[重大知鹦微信小程序介绍](https://www.bilibili.com/video/BV1rg411R7GD/) 
 
 如果你想体验我们的小程序，可以扫描体验二维码，申请体验访问权限即可：
 
-![小程序码.jpg](README.assets/小程序码.jpg)
+![小程序码.jpg](README.Background/小程序码.jpg)
 
 ## 3 Usage&Install
 
