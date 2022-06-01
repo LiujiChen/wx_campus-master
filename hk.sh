@@ -1,1 +1,0 @@
-git checkout hk && git add . && git commit -m " '@hk' `date +'%Y-%m-%d %H:%M'` " && git push origin hk
