@@ -1,1 +1,0 @@
-git checkout clj && git add . && git commit -m " '@clj' `date +'%Y-%m-%d %H:%M'` " && git push origin clj
