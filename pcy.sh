@@ -1,1 +1,0 @@
-git checkout pcy && git add . && git commit -m " '@pcy' `date +'%Y-%m-%d %H:%M'` " && git push origin pcy
